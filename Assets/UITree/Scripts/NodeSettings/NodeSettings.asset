@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876af6f5c006c2a41a8929204e31b4fa, type: 3}
+  m_Name: NodeSettings
+  m_EditorClassIdentifier: 
+  height: 60
+  spacing: 0
+  childrenIndent: 65
+  expandImageSettings:
+    expand: {fileID: 0}
+    expandColor: {r: 1, g: 1, b: 1, a: 1}
+    collapse: {fileID: 0}
+    collapseColor: {r: 1, g: 1, b: 1, a: 1}
+    empty: {fileID: 0}
+    emptyColor: {r: 1, g: 1, b: 1, a: 1}
+    imageSizeDelta: {x: 60, y: 60}
+  contentImageSettings:
+    expand: {fileID: 0}
+    expandColor: {r: 1, g: 1, b: 1, a: 1}
+    collapse: {fileID: 0}
+    collapseColor: {r: 1, g: 1, b: 1, a: 1}
+    empty: {fileID: 0}
+    emptyColor: {r: 1, g: 1, b: 1, a: 1}
+    imageSizeDelta: {x: 60, y: 60}
+  selected:
+    font: {fileID: 0}
+    fontStyle: 0
+    fontSize: 46
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    textAlignment: 0
+  expanded:
+    font: {fileID: 0}
+    fontStyle: 0
+    fontSize: 46
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    textAlignment: 0
+  collapsed:
+    font: {fileID: 0}
+    fontStyle: 0
+    fontSize: 46
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    textAlignment: 0
+  empty:
+    font: {fileID: 0}
+    fontStyle: 0
+    fontSize: 46
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    textAlignment: 0
