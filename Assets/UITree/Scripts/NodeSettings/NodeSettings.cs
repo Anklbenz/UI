@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Settings", fileName = "NodeSettings", order = 0)]
@@ -22,6 +23,7 @@ public class NodeSettings : ScriptableObject {
 	[SerializeField] private StateImageSettings contentImageSettings;
 
 	[Header("Text Setting")]
+	public TMP_FontAsset font;
 	[SerializeField] private FontSettings selected;
 	[SerializeField] private FontSettings expanded;
 	[SerializeField] private FontSettings collapsed;

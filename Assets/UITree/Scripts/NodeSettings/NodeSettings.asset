@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876af6f5c006c2a41a8929204e31b4fa, type: 3}
   m_Name: NodeSettings
   m_EditorClassIdentifier: 
-  height: 60
+  nodeHeight: 60
+  expandParentWidth: 60
+  imageParentWidth: 60
   spacing: 0
   childrenIndent: 65
+  sprite: {fileID: 0}
+  contentColor: {r: 0, g: 0, b: 0, a: 0}
+  selectionColor: {r: 0, g: 0, b: 1, a: 1}
   expandImageSettings:
     expand: {fileID: 0}
     expandColor: {r: 1, g: 1, b: 1, a: 1}
@@ -32,26 +37,26 @@ MonoBehaviour:
     emptyColor: {r: 1, g: 1, b: 1, a: 1}
     imageSizeDelta: {x: 60, y: 60}
   selected:
-    font: {fileID: 0}
-    fontStyle: 0
+    font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     fontSize: 46
     textColor: {r: 1, g: 1, b: 1, a: 1}
+    fontStyle: 0
     textAlignment: 0
   expanded:
-    font: {fileID: 0}
-    fontStyle: 0
+    font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     fontSize: 46
     textColor: {r: 1, g: 1, b: 1, a: 1}
+    fontStyle: 0
     textAlignment: 0
   collapsed:
     font: {fileID: 0}
-    fontStyle: 0
     fontSize: 46
     textColor: {r: 1, g: 1, b: 1, a: 1}
+    fontStyle: 0
     textAlignment: 0
   empty:
     font: {fileID: 0}
-    fontStyle: 0
     fontSize: 46
     textColor: {r: 1, g: 1, b: 1, a: 1}
+    fontStyle: 0
     textAlignment: 0

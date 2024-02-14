@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UITree;
 using UnityEditor;
 using UnityEngine;
@@ -21,7 +19,12 @@ public class RootNodeEditor : Editor {
 	}
 	public override void OnInspectorGUI() {
 //base.OnInspectorGUI();
+		
+		GUILayout.Space(5);
+		GUILayout.Label(CHILD_NODES_NAME, EditorStyles.boldLabel);
+		GUILayout.Space(5);
 		DrawChildNodes();
+		AddChild();
 		GUILayout.Space(5);
 		serializedObject.ApplyModifiedProperties();
 
@@ -29,10 +32,14 @@ public class RootNodeEditor : Editor {
 			EditorUtility.SetDirty(this);
 	}
 	private void DrawChildNodes() {
-		GUILayout.Space(5);
-		GUILayout.Label(CHILD_NODES_NAME, EditorStyles.boldLabel);
-		GUILayout.Space(5);
+	    GUILayout.BeginHorizontal();
+		GUILayout.Space(20);
+		EditorGUILayout.PropertyField(_nodes, new GUIContent(CHILD_NODES_NAME), true);
+		GUILayout.EndHorizontal();
 
+		GUILayout.Space(5);
+	}
+	private void AddChild() {
 		GUILayout.BeginHorizontal();
 		GUILayout.Space(20);
 		GUILayout.Label(NEW_CHILD_NAME, GUILayout.Width(120));
@@ -45,13 +52,6 @@ public class RootNodeEditor : Editor {
 			AddFromEditor(_nodeName);
 
 		GUILayout.EndHorizontal();
-
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(20);
-		EditorGUILayout.PropertyField(_nodes, new GUIContent(CHILD_NODES_NAME), true);
-		GUILayout.EndHorizontal();
-
-		GUILayout.Space(5);
 	}
 	private void AddFromEditor(string nodeName) {
 		if (_rootNode.tree == null) return;

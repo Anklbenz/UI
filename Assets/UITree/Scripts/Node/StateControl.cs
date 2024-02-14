@@ -10,7 +10,7 @@ public enum CheckboxState {
 }
 public class StateControl : Selectable, IPointerClickHandler {
 	public event Action ClickedEvent;
-
+ 
 	[SerializeField] private Image targetImage;
 	[SerializeField] private Sprite expandedSprite, collapsedSprite, emptySprite;
 	[SerializeField] private Color expandedColor = Color.white, collapsedColor = Color.white, emptyColor = Color.white;

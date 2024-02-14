@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 980551201977340366}
   - component: {fileID: 3835238820945048537}
   - component: {fileID: 7622466797502802292}
+  - component: {fileID: 7801083063853005482}
+  - component: {fileID: 2247248671750221495}
   m_Layer: 0
   m_Name: ExpandControl
   m_TagString: Untagged
@@ -175,7 +177,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 5118602342871331866}
+  m_TargetGraphic: {fileID: 2247248671750221495}
   targetImage: {fileID: 5118602342871331866}
   expandedSprite: {fileID: 21300000, guid: 228ddf8a4442b40489c9d717bb454fe8, type: 3}
   collapsedSprite: {fileID: 21300000, guid: 33230fde41e9c6248946e288c6a3d33d, type: 3}
@@ -183,6 +185,44 @@ MonoBehaviour:
   expandedColor: {r: 1, g: 1, b: 1, a: 1}
   collapsedColor: {r: 1, g: 1, b: 1, a: 1}
   emptyColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!222 &7801083063853005482
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826550221688625197}
+  m_CullTransparentMesh: 1
+--- !u!114 &2247248671750221495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826550221688625197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1920201598246306321
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +503,8 @@ GameObject:
   - component: {fileID: 5791172980384368024}
   - component: {fileID: 1274244036452519092}
   - component: {fileID: 1017144377902580082}
+  - component: {fileID: 5693303475026332564}
+  - component: {fileID: 2402564180476244521}
   m_Layer: 0
   m_Name: ImageControl
   m_TagString: Untagged
@@ -551,7 +593,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 5446166776753803135}
+  m_TargetGraphic: {fileID: 2402564180476244521}
   targetImage: {fileID: 5446166776753803135}
   expandedSprite: {fileID: 21300000, guid: c5e0d2dcf1cdb1a45bd3c7d6f9be5ce6, type: 3}
   collapsedSprite: {fileID: 21300000, guid: 41d682c9509c00243ac2500a03987c16, type: 3}
@@ -559,6 +601,44 @@ MonoBehaviour:
   expandedColor: {r: 1, g: 1, b: 1, a: 1}
   collapsedColor: {r: 1, g: 1, b: 1, a: 1}
   emptyColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!222 &5693303475026332564
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946818748008690240}
+  m_CullTransparentMesh: 1
+--- !u!114 &2402564180476244521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946818748008690240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6619244280054672505
 GameObject:
   m_ObjectHideFlags: 0
