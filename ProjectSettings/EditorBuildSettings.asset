@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UITree/Tree.unity
+    path: Assets/UITree/Example/Example.unity
     guid: 3b1fb8adb8161124aa1b71fec84010e8
   m_configObjects: {}

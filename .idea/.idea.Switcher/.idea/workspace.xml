@@ -2,17 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Resources/UITreeNode_template.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Resources/UITreeNode_template.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/RootNodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/RootNodeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/StateControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/StateControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/FontSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/FontSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/SelectionSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/SelectionSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/Tree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/Tree.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/UIRectTransformExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecylce/UIRectTransformExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Collapsed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Collapsed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Empty.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Expanded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Expanded.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/FolderClose.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/FolderClose.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/FolderOpen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/FolderOpen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/FpsCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/FpsCounter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Resources/UITreeNode_template.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Resources/UITreeNode_template.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NewBehaviourScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NewBehaviourScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/GUILayoutExtends.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/GUILayoutExtends.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/NodeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/NodeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/RootNodeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/RootNodeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/TreeViewEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/TreeViewEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Node.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/Node.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/NodeRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/NodeRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/SelectionControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/SelectionControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/StateControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/Node/StateControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeCollection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeCollection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeCollection1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeCollection1.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/FontSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/FontSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/StateImageSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/StateImageSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodesParent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/NodesParent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/TreeView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Scripts/TreeView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Tree.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/Tree.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/files_569744 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/files_569744 (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +71,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d3dacd00ce441dc8c61d528a2193088158400/09/ac10ed42/AddComponentMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d3dacd00ce441dc8c61d528a2193088158400/63/5c3c6720/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d3dacd00ce441dc8c61d528a2193088158400/e5/976feb44/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/7f/669dec22/IList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ae/0ea5be8d/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ed/1742a7d0/IEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -41,17 +91,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/Example/Example1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/CreateUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/UIAcceptSliderEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/GUILayoutExtends.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/RootNodeEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/Node/Editor/TreeViewEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/Node/NodeRoot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/Node/SelectionControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/NodeCollection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/NodeSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/NodeSettings/StateImageSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/NodesParent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITree/Scripts/TreeView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecylce/UIRectTransformExtension.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UITree/Example/Example.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UITree/UITree/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.core@1.4.3/Editor/Core/UiHelpers/SliderToggleUiHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.6.4/Editor/Items/ItemsUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/SliderEditor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -104,10 +146,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12920">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12920" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -130,7 +172,11 @@
       <workItem from="1707379828680" duration="28609000" />
       <workItem from="1707470579027" duration="22934000" />
       <workItem from="1707721693232" duration="19455000" />
-      <workItem from="1707808707570" duration="41306000" />
+      <workItem from="1707808707570" duration="44167000" />
+      <workItem from="1707990312842" duration="9297000" />
+      <workItem from="1708004531437" duration="2187000" />
+      <workItem from="1708008413670" duration="8489000" />
+      <workItem from="1709113062274" duration="524000" />
     </task>
     <servers />
   </component>
