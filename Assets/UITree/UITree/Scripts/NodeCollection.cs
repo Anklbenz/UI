@@ -6,8 +6,7 @@ using UnityEngine;
 namespace UITree {
 	[Serializable]
 	public class NodeCollection : IList<Node> {
-		
-		
+
 		[SerializeField] private List<Node> childNodes;
 		[SerializeField] private NodeRoot owner;
 		public event Action ChangedEvent;

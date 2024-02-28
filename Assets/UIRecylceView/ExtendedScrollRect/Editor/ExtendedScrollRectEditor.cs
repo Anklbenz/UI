@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor.AnimatedValues;
+using UnityEditor;
 
-namespace UnityEditor.UI
+namespace UIRecycleView
 {
-    [CustomEditor(typeof(UnlockedScrollRect), true)]
+    [CustomEditor(typeof(ExtendedScrollRect), true)]
     [CanEditMultipleObjects]
     /// <summary>
     /// Custom Editor for the ScrollRect Component.
     /// Extend this class to write a custom editor for a component derived from ScrollRect.
     /// </summary>
-    public class UnlockedScrollRectEditor : Editor
+    public class ExtendedScrollRectEditor : Editor
     {
         SerializedProperty m_Content;
         SerializedProperty m_Horizontal;
@@ -85,7 +86,7 @@ namespace UnityEditor.UI
             m_VScrollbarIsNotChild = false;
             if (targets.Length == 1)
             {
-                Transform transform = ((UnlockedScrollRect)target).transform;
+                Transform transform = ((ExtendedScrollRect)target).transform;
                 if (m_Viewport.objectReferenceValue == null || ((RectTransform)m_Viewport.objectReferenceValue).transform.parent != transform)
                     m_ViewportIsNotChild = true;
                 if (m_HorizontalScrollbar.objectReferenceValue == null || ((Scrollbar)m_HorizontalScrollbar.objectReferenceValue).transform.parent != transform)

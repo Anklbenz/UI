@@ -9,7 +9,7 @@ namespace UITree {
 		[SerializeField] protected TreeView treeView;
 		[SerializeField] protected NodeRoot parent;
 		[SerializeField] protected string text;
-		
+
 		public NodeCollection nodes => nodeCollection;
 		protected Transform childrenParentTransform => childrenTransform;
 
@@ -26,14 +26,14 @@ namespace UITree {
 					transform.SetParent(parent.childrenParentTransform.transform, false);
 			}
 		}
-		
+
 		public virtual string nodeName {
 			get => text;
 			set {
 				text = value;
 			}
 		}
-		
+
 		public void Initialize() =>
 				nodeCollection.SetOwner(this);
 
@@ -52,10 +52,10 @@ namespace UITree {
 		public int GetChildCount() {
 			int count = 0;
 			foreach (var node in nodes)
-				count +=  node.GetChildCount() + 1;
+				count += node.GetChildCount() + 1;
 			return count;
 		}
-		
+
 		public string fullPath {
 			get {
 				if (treeView == null)
@@ -65,8 +65,7 @@ namespace UITree {
 				return path.ToString();
 			}
 		}
-		private void GetFullPath(StringBuilder path, string pathSeparator)
-		{
+		private void GetFullPath(StringBuilder path, string pathSeparator) {
 			if (parent == null)
 				return;
 			parent.GetFullPath(path, pathSeparator);

@@ -1,21 +1,18 @@
 using System;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace UnityEngine.UI
+namespace UIRecycleView
 {
     [AddComponentMenu("UI/Scroll Rect", 37)]
     [SelectionBase]
     [ExecuteAlways]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(RectTransform))]
-    /// <summary>
-    /// A component for making a child RectTransform scroll.
-    /// </summary>
-    /// <remarks>
-    /// ScrollRect will not do any clipping on its own. Combined with a Mask component, it can be turned into a scroll view.
-    /// </remarks>
-    public class UnlockedScrollRect : UIBehaviour, IInitializePotentialDragHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, ICanvasElement, ILayoutElement, ILayoutGroup
+
+    public class ExtendedScrollRect : UIBehaviour, IInitializePotentialDragHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IScrollHandler, ICanvasElement, ILayoutElement, ILayoutGroup
     {
         /// <summary>
         /// A setting for which behavior to use when content moves beyond the confines of its container.
@@ -520,7 +517,7 @@ namespace UnityEngine.UI
         private DrivenRectTransformTracker m_Tracker;
         #pragma warning restore 649
 
-        protected UnlockedScrollRect()
+        protected ExtendedScrollRect()
         {}
 
         /// <summary>
