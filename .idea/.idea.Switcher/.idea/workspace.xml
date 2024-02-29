@@ -2,40 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/Demo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/Demo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/ExtendedScrollRect.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/ExtendedScrollRect/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/ExtendedScrollRect/Editor/UnlockedScrollRectEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/ExtendedScrollRect/Editor/UnlockedScrollRectEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/ExtendedScrollRect/UnlockedScrollRect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/ExtendedScrollRect/UnlockedScrollRect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/IRecycleItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/IRecycleItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/Recycle.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/Recycle.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/Editor/RecycleViewEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/Editor/RecycleViewEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/IItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/IItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/IRecycleDataSource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/IRecycleDataSource.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/Image.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/Image.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/NumericDataAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/NumericDataAdapter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/RecycleView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/RecycleView/RecycleView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/UIRectTransformExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecylce/UIRectTransformExtension.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/Node/NodeRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/Node/NodeRoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Item.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/NodeRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/NodeRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleTree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleTree.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +46,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/CreateUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/UIAcceptSliderEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/ExtendedScrollRect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/StateControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/Example/Example.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/UITree/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.core@1.4.3/Editor/Core/UiHelpers/SliderToggleUiHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -150,7 +134,7 @@
       <workItem from="1707990312842" duration="9297000" />
       <workItem from="1708004531437" duration="2187000" />
       <workItem from="1708008413670" duration="8489000" />
-      <workItem from="1709113062274" duration="7494000" />
+      <workItem from="1709113062274" duration="19142000" />
     </task>
     <servers />
   </component>

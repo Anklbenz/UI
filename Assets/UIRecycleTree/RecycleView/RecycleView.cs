@@ -8,7 +8,7 @@ namespace UIRecycleTree {
 		private const int RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS = 1;
 
 		[SerializeField] private RectTransform template;
-		//Set item height 
+		//Set item height permanent
 		[SerializeField] private float itemHeight;
 		public IRecycleDataSource recycleDataSource { get; set; }
 		private Vector2 contentPosition {
@@ -17,7 +17,7 @@ namespace UIRecycleTree {
 		}
 		private RectTransform firstRectTransform => content.GetChild(0) as RectTransform;
 		private RectTransform lastRectTransform => content.GetChild(content.childCount - 1) as RectTransform;
-		private int lowestRecyclingIndex => _topmostRecyclingIndex + _visibleItemsPoolSize;
+		private int lowestRecyclingIndex => _topmostRecyclingIndex + _visibleItemsPoolSize - 1/**/;
 		private float recycleBoundsThreshold => _itemHeight * RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS;
 		private float extraContentSize => _itemHeight * EXTRA_ITEMS_COUNT;
 
@@ -66,7 +66,7 @@ namespace UIRecycleTree {
 			}
 		}
 		private void GetDataFromSource(Transform item, int index) {
-			var item1 = item.GetComponent<IItem>();
+			var item1 = item.GetComponent<IRecycleItem>();
 
 			recycleDataSource.GetDataByIndex(item1, index);
 		}
@@ -107,7 +107,7 @@ namespace UIRecycleTree {
 				verticalScrollbar.size = _visibleItemsPoolSize > 0 ? Mathf.Clamp01((float)_visibleItemsPoolSize / recycleDataSource.count) : 1;
 
 				var invisibleItemsCount = recycleDataSource.count - _visibleItemsPoolSize;
-				var visiblePartNormalizedPosition = 1 - ((float)lowestRecyclingIndex /*+ 1*/ - _visibleItemsPoolSize) / invisibleItemsCount;
+				var visiblePartNormalizedPosition = 1 - ((float)lowestRecyclingIndex + 1 - _visibleItemsPoolSize) / invisibleItemsCount;
 
 				verticalScrollbar.SetValueWithoutNotify(visiblePartNormalizedPosition);
 			}

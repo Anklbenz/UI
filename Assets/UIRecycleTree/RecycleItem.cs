@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 namespace UIRecycleTree {
-	public class Item : MonoBehaviour, IItem {
+	public class RecycleItem : MonoBehaviour, IRecycleItem {
 		[SerializeField] private TMP_Text textField;
 
 		public string text {

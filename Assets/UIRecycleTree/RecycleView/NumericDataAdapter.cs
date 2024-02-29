@@ -10,9 +10,9 @@ namespace UIRecycleTree {
 				_list.Add(i);
 		}
 
-		public void GetDataByIndex(IItem item, int index) {
-			var item1 = item as Item;
-			item1.text = _list[index].ToString();
+		public void GetDataByIndex(IRecycleItem recycleItem, int index) {
+			var item1 = recycleItem as NodeView;
+			item1.data = new NodeData() {text = _list[index].ToString()};
 		}
 	}
 }
