@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,28 +12,19 @@ namespace UIRecycleTree {
 
 		[SerializeField] private string pathSeparator = "/";
 		[SerializeField] private bool isExpandedAsDefault;
+		[SerializeField] private Node root;
+
+		[SerializeField] private List<Node> visibleNodes;
+
+		public NodeCollection nodes => root.nodes;
 
 		public string separator {
 			get => pathSeparator;
 			set => pathSeparator = value;
 		}
+
 		private Node _selected;
 
-		public Node CreateNode(string nodeText) {
-			var node = CreateNode();
-			node.nodeName = nodeText;
-			node.name = nodeText;
-			return node;
-		}
-
-		public Node CreateNode() {
-			var node = Instantiate(Resources.Load<Node>(RESOURCES_FILE_NAME));
-			//	node.tree = this;
-			node.Initialize();
-			node.isExpanded = isExpandedAsDefault;
-			node.name = DEFAULT_NODE_NAME;
-			return node;
-		}
 		public void OnNodeSelect(Node sender) {
 			if (_selected == null) {
 				SelectAndNotify(sender);
@@ -53,6 +45,10 @@ namespace UIRecycleTree {
 		private void Deselect(Node sender) {
 			_selected = null;
 			sender.isSelected = false;
+		}
+		protected override void Awake() {
+			// will not work with serialize
+			root.tree = this;
 		}
 	}
 }

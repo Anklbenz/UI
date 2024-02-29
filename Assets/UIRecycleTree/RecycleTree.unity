@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 542480599}
   - component: {fileID: 542480598}
   - component: {fileID: 542480597}
-  - component: {fileID: 542480600}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -352,18 +351,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542480600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542480596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1107083608
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +361,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1107083610}
   - component: {fileID: 1107083609}
-  - component: {fileID: 1107083611}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -459,18 +445,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1107083611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107083608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1116043752
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1116043754}
   - component: {fileID: 1116043755}
+  - component: {fileID: 1116043756}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -510,12 +485,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116043752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26c16000c59aaf4ba703f53a62ba0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 1197260684}
+--- !u!114 &1116043756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116043752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa92f49767a0f349be892c807d9179a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeView: {fileID: 1197260685}
 --- !u!1 &1136376837
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +719,7 @@ GameObject:
   - component: {fileID: 1197260683}
   - component: {fileID: 1197260682}
   - component: {fileID: 1197260684}
+  - component: {fileID: 1197260685}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -831,6 +820,21 @@ MonoBehaviour:
       m_Calls: []
   template: {fileID: 1920201598246306322, guid: d0862704da427964ebc37897441e1a74, type: 3}
   itemHeight: 0
+--- !u!114 &1197260685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197260679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485fec2c01201f419e22191b72e9dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathSeparator: /
+  isExpandedAsDefault: 0
+  visibleNodes: []
 --- !u!1 &1354239386
 GameObject:
   m_ObjectHideFlags: 0

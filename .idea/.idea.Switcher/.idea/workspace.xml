@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Item.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/NodeRoot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/NodeRoot.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleTree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleTree.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +17,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d3dacd00ce441dc8c61d528a2193088158400/09/ac10ed42/AddComponentMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d3dacd00ce441dc8c61d528a2193088158400/63/5c3c6720/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d3dacd00ce441dc8c61d528a2193088158400/e5/976feb44/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/15/0a201954/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/43/431a295e/IList`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5c/4c31a275/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/7f/669dec22/IList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ae/0ea5be8d/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ed/1742a7d0/IEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,15 +40,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/CreateUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/UIAcceptSliderEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/ExtendedScrollRect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/T.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/StateControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/Example/Example.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/UITree/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.core@1.4.3/Editor/Core/UiHelpers/SliderToggleUiHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.6.4/Editor/Items/ItemsUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/SliderEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Slider/SliderRectReferences.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CreateSceneUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Slider/SliderTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Utilities/LinqUtility.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -104,10 +100,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27108">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12916">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="27108" />
+      <option name="pid" value="12916" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -135,6 +131,7 @@
       <workItem from="1708004531437" duration="2187000" />
       <workItem from="1708008413670" duration="8489000" />
       <workItem from="1709113062274" duration="19142000" />
+      <workItem from="1709202694965" duration="16133000" />
     </task>
     <servers />
   </component>
@@ -159,6 +156,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UIRecycleTree/T.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\Users\mariukh\Unity\UI\Switcher\Assets\UIRecycleTree\T.cs" initialLine="22" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="522" />
+            </startOffsets>
+            <endOffsets>
+              <option value="546" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#UnityEditor.SerializedProperty" memberName="displayName" />

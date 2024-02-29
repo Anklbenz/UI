@@ -4,16 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace UIRecycleTree {
-	[Serializable]
+	/*[Serializable]*/
 	public class NodeCollection : IList<Node> {
-		[SerializeField] private List<Node> childNodes;
-		[SerializeField] private Node owner;
+		/*[SerializeField]*/
+		private readonly List<Node> _childNodes = new();
+		/*[SerializeField]*/
+		private readonly Node _owner;
 		public event Action ChangedEvent;
-		public int Count => childNodes.Count;
-		public void SetOwner(Node ownerNode) =>
-				owner = ownerNode;
-		
-		public Node Add1(Node item) {
+		public int Count => _childNodes.Count;
+		public NodeCollection(Node ownerNode) =>
+				_owner = ownerNode;
+
+		public Node AddFluent(Node item) {
 			Add(item);
 			return item;
 		}
@@ -21,8 +23,10 @@ namespace UIRecycleTree {
 		public void Add(Node item) {
 			if (item == null) return;
 
-			childNodes.Add(item);
-			item.parentNode = owner;
+			_childNodes.Add(item);
+			item.parentNode = _owner;
+			//
+			item.tree = _owner.tree;
 
 			ChangedNotify();
 		}
@@ -31,14 +35,14 @@ namespace UIRecycleTree {
 			//	for (var i = childNodes.Count - 1; i > 0; i--)
 			//		childNodes[i].Destroy();
 
-			childNodes.Clear();
+			_childNodes.Clear();
 			ChangedNotify();
 		}
 
 		public bool Remove(Node item) {
 			if (item == null) return false;
 
-			var removed = childNodes.Remove(item);
+			var removed = _childNodes.Remove(item);
 			;
 			if (!removed) return false;
 
@@ -49,7 +53,7 @@ namespace UIRecycleTree {
 		}
 
 		public bool RemoveListRecord(Node item) {
-			var result = childNodes.Remove(item);
+			var result = _childNodes.Remove(item);
 
 			ChangedNotify();
 			return result;
@@ -58,7 +62,7 @@ namespace UIRecycleTree {
 		public void RemoveAt(int index) {
 			//		childNodes[index].Destroy();
 
-			childNodes.RemoveAt(index);
+			_childNodes.RemoveAt(index);
 			ChangedNotify();
 		}
 		private void ChangedNotify() =>
@@ -67,27 +71,27 @@ namespace UIRecycleTree {
 		// IList standard properties implement
 
 		public int IndexOf(Node item) =>
-				childNodes.IndexOf(item);
+				_childNodes.IndexOf(item);
 
 		public void Insert(int index, Node item) =>
-				childNodes.Insert(index, item);
+				_childNodes.Insert(index, item);
 
 		public void CopyTo(Node[] array, int arrayIndex) =>
-				childNodes.CopyTo(array, arrayIndex);
+				_childNodes.CopyTo(array, arrayIndex);
 		public IEnumerator<Node> GetEnumerator() =>
-				childNodes.GetEnumerator();
+				_childNodes.GetEnumerator();
 
 		IEnumerator IEnumerable.GetEnumerator() =>
 				GetEnumerator();
 
 		public Node this[int index] {
-			get => childNodes[index];
-			set => childNodes[index] = value;
+			get => _childNodes[index];
+			set => _childNodes[index] = value;
 		}
 
 		public bool IsReadOnly => false;
 
 		public bool Contains(Node item) =>
-				childNodes.Contains(item);
+				_childNodes.Contains(item);
 	}
 }
