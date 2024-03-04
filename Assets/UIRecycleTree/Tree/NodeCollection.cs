@@ -1,19 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace UIRecycleTree {
-	/*[Serializable]*/
+
 	public class NodeCollection : IList<Node> {
-		/*[SerializeField]*/
-		private readonly List<Node> _childNodes = new();
-		/*[SerializeField]*/
-		private readonly Node _owner;
 		public event Action ChangedEvent;
 		public int Count => _childNodes.Count;
+
+		private readonly List<Node> _childNodes = new();
+		private readonly Node _owner;
 		public NodeCollection(Node ownerNode) =>
 				_owner = ownerNode;
+
+		public void Add(Node[] array) {
+			foreach (var node in array) 
+				Add(node);
+		}
+
+		public Node AddFluent(string name) {
+			var node = new Node(name);
+			return AddFluent(node);
+		}
 
 		public Node AddFluent(Node item) {
 			Add(item);
@@ -25,48 +33,33 @@ namespace UIRecycleTree {
 
 			_childNodes.Add(item);
 			item.parentNode = _owner;
-			//
 			item.tree = _owner.tree;
 
-			ChangedNotify();
+			CollectionChangedNotify();
 		}
 
 		public void Clear() {
-			//	for (var i = childNodes.Count - 1; i > 0; i--)
-			//		childNodes[i].Destroy();
-
 			_childNodes.Clear();
-			ChangedNotify();
+			CollectionChangedNotify();
 		}
 
 		public bool Remove(Node item) {
 			if (item == null) return false;
 
 			var removed = _childNodes.Remove(item);
-			;
 			if (!removed) return false;
 
-			//	item.Destroy();
-
-			ChangedNotify();
+			CollectionChangedNotify();
 			return true;
 		}
-
-		public bool RemoveListRecord(Node item) {
-			var result = _childNodes.Remove(item);
-
-			ChangedNotify();
-			return result;
-		}
-
+		
 		public void RemoveAt(int index) {
-			//		childNodes[index].Destroy();
-
 			_childNodes.RemoveAt(index);
-			ChangedNotify();
+			CollectionChangedNotify();
 		}
-		private void ChangedNotify() =>
-				ChangedEvent?.Invoke();
+		private void CollectionChangedNotify() =>
+				_owner.tree.OnItemsCountChanged();
+		//treenode register
 
 		// IList standard properties implement
 
@@ -78,6 +71,7 @@ namespace UIRecycleTree {
 
 		public void CopyTo(Node[] array, int arrayIndex) =>
 				_childNodes.CopyTo(array, arrayIndex);
+
 		public IEnumerator<Node> GetEnumerator() =>
 				_childNodes.GetEnumerator();
 

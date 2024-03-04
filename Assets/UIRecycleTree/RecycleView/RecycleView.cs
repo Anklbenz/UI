@@ -68,7 +68,7 @@ namespace UIRecycleTree {
 		private void GetDataFromSource(Transform item, int index) {
 			var item1 = item.GetComponent<IRecycleItem>();
 
-			recycleDataSource.GetDataByIndex(item1, index);
+			recycleDataSource.SetDataToItem(item1, index);
 		}
 
 		private void IncreasePool(int newPoolSize) {

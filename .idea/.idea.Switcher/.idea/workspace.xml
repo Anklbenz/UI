@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/INodeView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/INodeView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleTree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleTree.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/T.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/T.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Node.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/UINodeView_template.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/UINodeView_template.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/UIAcceptSliderEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/ExtendedScrollRect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/T.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/IndentBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Tree/StateControl.cs" root0="FORCE_HIGHLIGHTING" />
@@ -131,7 +140,7 @@
       <workItem from="1708004531437" duration="2187000" />
       <workItem from="1708008413670" duration="8489000" />
       <workItem from="1709113062274" duration="19142000" />
-      <workItem from="1709202694965" duration="16133000" />
+      <workItem from="1709202694965" duration="49277000" />
     </task>
     <servers />
   </component>
@@ -156,26 +165,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/UIRecycleTree/T.cs</url>
-          <line>23</line>
-          <properties documentPath="C:\Users\mariukh\Unity\UI\Switcher\Assets\UIRecycleTree\T.cs" initialLine="22" containingFunctionPresentation="method 'Start'">
-            <startOffsets>
-              <option value="522" />
-            </startOffsets>
-            <endOffsets>
-              <option value="546" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="Type#UIRecycleTree.TreeView" memberName="pathSeparator" />
+        <PinnedItemInfo parentTag="Type#UnityEngine.MonoBehaviour" memberName="runInEditMode" />
+        <PinnedItemInfo parentTag="Type#UnityEngine.Component" memberName="tag" />
         <PinnedItemInfo parentTag="Type#UnityEditor.SerializedProperty" memberName="displayName" />
+        <PinnedItemInfo parentTag="Type#UIRecycleTree.TreeView" memberName="visibleNodes" />
+        <PinnedItemInfo parentTag="Type#UnityEngine.Object" memberName="m_CachedPtr" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

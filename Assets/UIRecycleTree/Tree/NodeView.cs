@@ -2,33 +2,37 @@ using System;
 using UnityEngine;
 
 namespace UIRecycleTree {
-	public class NodeView : MonoBehaviour, IRecycleItem {
-		public event Action ClickedEvent, ExpandClickEvent;
 
+	public class NodeView : MonoBehaviour, IRecycleItem, INodeView {
+		public event Action ClickedEvent, ExpandClickEvent;
+		[SerializeField] private IndentBox indentBox;
 		[SerializeField] private StateControl expandControl, imageControl;
 		[SerializeField] private SelectionControl selectionControl;
 
-		public NodeData data {
-			get => _data;
+		public float indent {
+			set => indentBox.indent = value;
+		}
+		
+		public string text {
+			get => selectionControl.text;
+			set => selectionControl.text = value;
+		}
+
+		public CheckboxState state {
 			set {
-				_data = value;
-				Refresh();
+				expandControl.state = value;
+				imageControl.state = value;
 			}
 		}
 
-		private NodeData _data;
+		public void UnregisterEvents() {
+			ClickedEvent = null;
+			ExpandClickEvent = null;
+		}
 
-		private void Refresh() {
-			selectionControl.text = _data.text;
-
-			if (!_data.hasChildren) {
-				expandControl.state = CheckboxState.Empty;
-				imageControl.state = CheckboxState.Empty;
-				return;
-			}
-
-			expandControl.state = _data.expanded ? CheckboxState.Expanded : CheckboxState.Collapsed;
-			imageControl.state = _data.expanded ? CheckboxState.Expanded : CheckboxState.Collapsed;
+		public bool isSelected {
+			get => selectionControl.isSelected;
+			set => selectionControl.isSelected = value;
 		}
 
 		private void ClickNotify() =>
