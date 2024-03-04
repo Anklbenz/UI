@@ -17,7 +17,7 @@ namespace UIRecycleTree {
 		}
 		private RectTransform firstRectTransform => content.GetChild(0) as RectTransform;
 		private RectTransform lastRectTransform => content.GetChild(content.childCount - 1) as RectTransform;
-		private int lowestRecyclingIndex => _topmostRecyclingIndex + _visibleItemsPoolSize - 1/**/;
+		private int lowestRecyclingIndex => _topmostRecyclingIndex + _visibleItemsPoolSize /*- 1*//**/;
 		private float recycleBoundsThreshold => _itemHeight * RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS;
 		private float extraContentSize => _itemHeight * EXTRA_ITEMS_COUNT;
 
@@ -45,7 +45,7 @@ namespace UIRecycleTree {
 				DecreasePool(newVisibleItemsPoolSize);
 
 			_visibleItemsPoolSize = newVisibleItemsPoolSize;
-
+			
 			yield return null;
 			RedrawData();
 			UpdateScrollbars(Vector2.zero);
@@ -100,36 +100,7 @@ namespace UIRecycleTree {
 			if (isPossibleRecycleFromBottomToTop)
 				RecycleFromBottomToTop();
 		}
-
-		protected override void UpdateScrollbars(Vector2 offset) {
-			if (recycleDataSource == null) return;
-			if (verticalScrollbar) {
-				verticalScrollbar.size = _visibleItemsPoolSize > 0 ? Mathf.Clamp01((float)_visibleItemsPoolSize / recycleDataSource.count) : 1;
-
-				var invisibleItemsCount = recycleDataSource.count - _visibleItemsPoolSize;
-				var visiblePartNormalizedPosition = 1 - ((float)lowestRecyclingIndex + 1 - _visibleItemsPoolSize) / invisibleItemsCount;
-
-				verticalScrollbar.SetValueWithoutNotify(visiblePartNormalizedPosition);
-			}
-
-			// implement horizontal scroll bar 
-		}
-
-		protected override void SetVerticalNormalizedPosition(float value) {
-			if (recycleDataSource == null) return;
-
-			value = Mathf.Clamp01(1 - value);
-			var invisibleItemsCount = recycleDataSource.count - _visibleItemsPoolSize;
-			var newLowestItemIndex = (int)(value * invisibleItemsCount) + _visibleItemsPoolSize - 1;
-			var newTopmostItemIndex = newLowestItemIndex - _visibleItemsPoolSize + 1;
-
-			if (_topmostRecyclingIndex != newTopmostItemIndex)
-				normalizedPosition = new Vector2(normalizedPosition.x, _topmostRecyclingIndex > newTopmostItemIndex ? 1 : 0);
-
-			_topmostRecyclingIndex = newTopmostItemIndex;
-			RedrawData();
-		}
-
+		
 		private void RecycleFromTopToBottom() {
 			while (firstRectTransform.MinY() > _recyclableViewBounds.max.y && lowestRecyclingIndex < recycleDataSource.count) {
 				contentPosition -= new Vector2(0, _itemHeight);
@@ -154,6 +125,35 @@ namespace UIRecycleTree {
 				_topmostRecyclingIndex--;
 				GetDataFromSource(itemTransform, _topmostRecyclingIndex);
 			}
+		}
+		protected override void UpdateScrollbars(Vector2 offset) {
+			if (recycleDataSource == null) return;
+			if (verticalScrollbar) {
+				verticalScrollbar.size = _visibleItemsPoolSize > 0 ? Mathf.Clamp01((float)_visibleItemsPoolSize / recycleDataSource.count) : 1;
+
+				var invisibleItemsCount = recycleDataSource.count - _visibleItemsPoolSize;
+
+				var visiblePartNormalizedPosition = invisibleItemsCount != 0 ? 1 - ((float)lowestRecyclingIndex - _visibleItemsPoolSize) / invisibleItemsCount : 0;
+				
+				verticalScrollbar.SetValueWithoutNotify(visiblePartNormalizedPosition);
+			}
+
+			// implement horizontal scroll bar 
+		}
+
+		protected override void SetVerticalNormalizedPosition(float value) {
+			if (recycleDataSource == null) return;
+
+			value = Mathf.Clamp01(1 - value);
+			var invisibleItemsCount = recycleDataSource.count - _visibleItemsPoolSize;
+			var newLowestItemIndex = (int)(value * invisibleItemsCount) + _visibleItemsPoolSize - 1;
+			var newTopmostItemIndex = newLowestItemIndex - _visibleItemsPoolSize + 1;
+
+			if (_topmostRecyclingIndex != newTopmostItemIndex)
+				normalizedPosition = new Vector2(normalizedPosition.x, _topmostRecyclingIndex > newTopmostItemIndex ? 1 : 0);
+
+			_topmostRecyclingIndex = newTopmostItemIndex;
+			RedrawData();
 		}
 
 		private void SetRecyclingBounds() {

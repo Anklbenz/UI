@@ -56,7 +56,7 @@ namespace UIRecycleTree {
 		}
 
 		// public void Register(Node )
-		//hashSet
+				//hashSet nodes
 
 		protected override void Awake() {
 			// will not work with serialize
