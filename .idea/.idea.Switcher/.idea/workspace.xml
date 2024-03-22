@@ -3,66 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Demo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Demo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/Editor/ExtendedScrollRectEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/Editor/ExtendedScrollRectEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/ExtendedScrollRect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/ExtendedScrollRect/ExtendedScrollRect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/Editor/RecycleViewEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/Editor/RecycleViewEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleDataSource.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/IRecycleItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/Image.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/Image.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/NumericDataAdapter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/RecycleView/RecycleView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/INodeView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/INodeView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/IndentBox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/IndentBox.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Node.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Node.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeCollection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/NodeView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/SelectionControl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/SelectionControl.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Collapsed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Collapsed.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Collapsed_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Collapsed_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Empty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Empty.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Expanded.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Expanded.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Expanded_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/Expanded_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/empty_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/Sprites/empty_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/StateControl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/StateControl.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/TreeView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/UINodeView_template.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Tree/UINodeView_template.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/UIRectTransformExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/UIRectTransformExtension.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Example1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Example1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Scripts/Example1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Scripts/Example1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/UIRecycleTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/UIRecycleTree.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,8 +39,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/Example/Example1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/CreateUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/UIAcceptSliderEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTreeTree/TreeView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UIRecycleTree/T.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/Example/Example.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/UITree/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.core@1.4.3/Editor/Core/UiHelpers/SliderToggleUiHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -153,10 +95,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31908">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="31908" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -185,6 +127,8 @@
       <workItem from="1708008413670" duration="8489000" />
       <workItem from="1709113062274" duration="19142000" />
       <workItem from="1709202694965" duration="56211000" />
+      <workItem from="1711110059588" duration="3001000" />
+      <workItem from="1711114921296" duration="611000" />
     </task>
     <servers />
   </component>

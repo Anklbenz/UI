@@ -28,6 +28,7 @@ namespace UIRecycleTree {
 		public Node rootNode => root; // убрать, чтобы индейцы не удалили рут из кода
 		public int nodesCount => root.GetAllChildrenCountRecursive();
 		public bool isCheckboxesEnabled => nodePrefs != null && nodePrefs.checkboxEnabled;
+		public bool recursiveChecked => nodePrefs != null && nodePrefs.recursiveChecked;
 		public string separator {
 			get => pathSeparator;
 			set => pathSeparator = value;
@@ -35,10 +36,10 @@ namespace UIRecycleTree {
 		public NodeStyle[] nodeStyles => nodeStylesArray;
 		public int expandedCount => expandedNodes.Count;
 		public Node selectedNode => _selectedNode;
-		
+
 		private Node _selectedNode;
 		private float _maxItemWidth;
-		
+
 		public void ExpandAll() {
 			foreach (var node in nodes)
 				node.ExpandAll();
@@ -78,10 +79,12 @@ namespace UIRecycleTree {
 			node.SetCheckedWithoutNotify(newState);
 			base.Repaint();
 
-			onNodeCheckedChanged?.Invoke(node);
+			OnNodeCheckedChangedNotify(node);
 		}
-		
 
+		public void OnNodeCheckedChangedNotify(Node node) =>
+				onNodeCheckedChanged?.Invoke(node);
+		
 		private void OnNodeDoubleClick(Node node) =>
 				onNodeDblClick?.Invoke(node);
 
@@ -103,7 +106,7 @@ namespace UIRecycleTree {
 			root.GetAllExpandedChildrenRecursive(expandedNodes);
 			StartCoroutine(Reload());
 		}
-		
+
 		protected override RecycleItem CreateItem() {
 			var item = Instantiate(Resources.Load<NodeView>(ITEM_RESOURCE_NAME), content, false);
 			item.nodePrefs = nodePrefs;
@@ -153,7 +156,7 @@ namespace UIRecycleTree {
 			root.FindChildByNameRecursive(searchName, foundedItems);
 			return foundedItems.ToArray();
 		}
-		
+
 		protected override void OnPoolIncrease(RecycleItem item) =>
 				((NodeView)item).WidthChangedEvent += UpdateContentWidth;
 

@@ -41,7 +41,10 @@ namespace UIRecycleTree {
 
 				_isChecked = value;
 				if (tree != null) {
+					if (tree.recursiveChecked)
+						ChangeIsCheckedStateForAllChildren(_isChecked);
 					tree.Repaint();
+					tree.OnNodeCheckedChangedNotify(this);
 				}
 			}
 		}
@@ -224,16 +227,14 @@ namespace UIRecycleTree {
 			}
 		}
 
-		public void ChangeIsCheckedStateForAllChildren(bool isCheck) {
+		private void ChangeIsCheckedStateForAllChildren(bool isCheck) {
 			foreach (var node in nodes) {
 				node.SetCheckedWithoutNotify(isCheck);
-				if (node.hasChildren) {
-					node.SetCheckedWithoutNotify(isCheck);
+				if (tree != null)
+					tree.OnNodeCheckedChangedNotify(this);
+				if (node.hasChildren)
 					node.ChangeIsCheckedStateForAllChildren(isChecked);
-				}
 			}
-			if (tree == null) return;
-			tree.Rebuild();
 		}
 		
 		private void GetFullPath(StringBuilder path, string pathSeparator) {

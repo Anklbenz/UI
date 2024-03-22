@@ -27,6 +27,7 @@ namespace UIRecycleTree {
 		[Header("Checkbox preferences")]
 		[Space(5)]
 		[SerializeField] private bool _checkboxEnabled;
+		[SerializeField] private bool _recursiveChecked;
 		[SerializeField] private float _checkedWidth = 60;
 		[SerializeField] private Vector2 _checkedIconSize = new(40, 40);
 
@@ -46,6 +47,7 @@ namespace UIRecycleTree {
 		public float iconWidth => _iconWidth;
 		public Vector2 iconSize => _iconSize;
 		public bool checkboxEnabled => _checkboxEnabled;
+		public bool recursiveChecked => _recursiveChecked;
 		public float checkedWidth => _checkedWidth;
 		public Vector2 checkedIconSize => _checkedIconSize;
 		public TMP_FontAsset font => _font;
