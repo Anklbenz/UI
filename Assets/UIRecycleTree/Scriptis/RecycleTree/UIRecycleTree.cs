@@ -75,11 +75,7 @@ namespace UIRecycleTree {
 		}
 
 		private void OnNodeCheckedClicked(Node node) {
-			var newState = !node.isChecked;
-			node.SetCheckedWithoutNotify(newState);
-			base.Repaint();
-
-			OnNodeCheckedChangedNotify(node);
+			node.isChecked = !node.isChecked;
 		}
 
 		public void OnNodeCheckedChangedNotify(Node node) =>

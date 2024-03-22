@@ -231,7 +231,7 @@ namespace UIRecycleTree {
 			foreach (var node in nodes) {
 				node.SetCheckedWithoutNotify(isCheck);
 				if (tree != null)
-					tree.OnNodeCheckedChangedNotify(this);
+					tree.OnNodeCheckedChangedNotify(node);
 				if (node.hasChildren)
 					node.ChangeIsCheckedStateForAllChildren(isChecked);
 			}

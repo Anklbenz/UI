@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Example1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Example1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Example.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Example.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Scripts/Example1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Scripts/Example1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/UIRecycleTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/UIRecycleTree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12424">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="12424" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -128,7 +131,7 @@
       <workItem from="1709113062274" duration="19142000" />
       <workItem from="1709202694965" duration="56211000" />
       <workItem from="1711110059588" duration="3001000" />
-      <workItem from="1711114921296" duration="611000" />
+      <workItem from="1711114921296" duration="2028000" />
     </task>
     <servers />
   </component>
@@ -153,6 +156,36 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs</url>
+          <line>42</line>
+          <properties documentPath="C:\Users\mariukh\Unity\UI\Switcher\Assets\UIRecycleTree\Scriptis\RecycleTree\Node\Node.cs" initialLine="42" containingFunctionPresentation="property 'isChecked'">
+            <startOffsets>
+              <option value="1158" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1175" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs</url>
+          <line>233</line>
+          <properties documentPath="C:\Users\mariukh\Unity\UI\Switcher\Assets\UIRecycleTree\Scriptis\RecycleTree\Node\Node.cs" initialLine="233" containingFunctionPresentation="method 'ChangeIsCheckedStateForAllChildren'">
+            <startOffsets>
+              <option value="5596" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5634" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#UIRecycleTree.TreeView" memberName="pathSeparator" />

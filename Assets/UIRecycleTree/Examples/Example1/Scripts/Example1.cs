@@ -21,14 +21,14 @@ namespace UIRecycleTree {
 		}
 
 		private void OnCheckedChanged(Node arg0) {
-			
-			
-		}
-		private void OnNodeSelected(Node arg0) {
+			Debug.Log(arg0.name);
 			var boundTransform = (Transform)arg0.data;
 			if (boundTransform.TryGetComponent<Renderer>(out var rend)) {
-				rend.material.color = Color.green;
+				rend.material.color = arg0.isChecked ? Color.green : Color.white;
 			}
+		}
+		private void OnNodeSelected(Node arg0) {
+
 		}
 	}
 }

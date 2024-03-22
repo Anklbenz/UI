@@ -31,8 +31,7 @@ public class Example : MonoBehaviour {
 	}
 	private void OnChecked(Node arg0) {
 		Debug.Log(arg0.name + "Checked");
-		arg0.ChangeIsCheckedStateForAllChildren(arg0.isChecked);
-	}
+		}
 	private void SelectionChanged() {
 		Debug.Log("Selection Changed");
 	}
