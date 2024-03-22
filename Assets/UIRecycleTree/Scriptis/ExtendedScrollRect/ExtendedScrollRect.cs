@@ -333,7 +333,7 @@ namespace UIRecycleTree
         }
 
         [SerializeField]
-        private Scrollbar m_VerticalScrollbar;
+        protected Scrollbar m_VerticalScrollbar;
 
         /// <summary>
         /// Optional Scrollbar object linked to the vertical scrolling of the ScrollRect.
@@ -472,7 +472,7 @@ namespace UIRecycleTree
         }
 
         protected Bounds m_ContentBounds;
-        private Bounds m_ViewBounds;
+        protected Bounds m_ViewBounds;
 
         private Vector2 m_Velocity;
 
@@ -534,7 +534,10 @@ namespace UIRecycleTree
             if (executing == CanvasUpdate.PostLayout)
             {
                 UpdateBounds();
-                UpdateScrollbars(Vector2.zero);
+                // Extended
+                UpdateVerticalScrollbar(Vector2.zero);
+                UpdateHorizontalScrollbar(Vector2.zero);
+               //UpdateScrollbars(Vector2.zero);
                 UpdatePrevData();
 
                 m_HasRebuiltLayout = true;
@@ -884,7 +887,10 @@ namespace UIRecycleTree
 
             if (m_ViewBounds != m_PrevViewBounds || m_ContentBounds != m_PrevContentBounds || m_Content.anchoredPosition != m_PrevPosition)
             {
-                UpdateScrollbars(offset);
+	            //Extended 
+	            UpdateVerticalScrollbar(offset);
+	            UpdateHorizontalScrollbar(offset);
+	        // UpdateScrollbars(offset);
                 
                 UISystemProfilerApi.AddMarker("ScrollRect.value", this);
                 // Invoke extended virtual method
@@ -915,7 +921,31 @@ namespace UIRecycleTree
             m_PrevContentBounds = m_ContentBounds;
         }
 
-        protected virtual void UpdateScrollbars(Vector2 offset)
+
+        
+        protected virtual void UpdateVerticalScrollbar(Vector2 offset) {
+	        if (!m_VerticalScrollbar) return;
+	        if (m_ContentBounds.size.y > 0)
+		        m_VerticalScrollbar.size = Mathf.Clamp01((m_ViewBounds.size.y - Mathf.Abs(offset.y)) / m_ContentBounds.size.y);
+	        else
+		        m_VerticalScrollbar.size = 1;
+
+	        m_VerticalScrollbar.value = verticalNormalizedPosition;
+        }
+
+        protected virtual void UpdateHorizontalScrollbar(Vector2 offset) {
+	        if (!m_HorizontalScrollbar) return;
+
+	        if (m_ContentBounds.size.x > 0)
+		        m_HorizontalScrollbar.size = Mathf.Clamp01((m_ViewBounds.size.x - Mathf.Abs(offset.x)) / m_ContentBounds.size.x);
+	        else
+		        m_HorizontalScrollbar.size = 1;
+
+	        m_HorizontalScrollbar.value = horizontalNormalizedPosition;
+        }
+       
+        
+        /*protected virtual void UpdateScrollbars(Vector2 offset)
         {
             if (m_HorizontalScrollbar)
             {
@@ -936,7 +966,7 @@ namespace UIRecycleTree
 
                 m_VerticalScrollbar.value = verticalNormalizedPosition;
             }
-        }
+        }*/
 
         /// <summary>
         /// The scroll position as a Vector2 between (0,0) and (1,1) with (0,0) being the lower left corner.
@@ -1221,13 +1251,13 @@ namespace UIRecycleTree
             m_ContentBounds = GetBounds();
         }
 
-        void UpdateScrollbarVisibility()
+        protected virtual void UpdateScrollbarVisibility()
         {
             UpdateOneScrollbarVisibility(vScrollingNeeded, m_Vertical, m_VerticalScrollbarVisibility, m_VerticalScrollbar);
             UpdateOneScrollbarVisibility(hScrollingNeeded, m_Horizontal, m_HorizontalScrollbarVisibility, m_HorizontalScrollbar);
         }
 
-        private static void UpdateOneScrollbarVisibility(bool xScrollingNeeded, bool xAxisEnabled, ScrollbarVisibility scrollbarVisibility, Scrollbar scrollbar)
+        protected static void UpdateOneScrollbarVisibility(bool xScrollingNeeded, bool xAxisEnabled, ScrollbarVisibility scrollbarVisibility, Scrollbar scrollbar)
         {
             if (scrollbar)
             {

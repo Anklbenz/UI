@@ -1,1 +1,0 @@
-using System;namespace UIRecycleTree {	public interface INodeView {		event Action ClickedEvent, ExpandClickEvent;		string text { get; set; }		float indent { set; }		CheckboxState state { set; }		bool isSelected { get; set; }		void UnregisterEvents();	}}

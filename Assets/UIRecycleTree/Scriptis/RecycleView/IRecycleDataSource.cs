@@ -1,7 +1,7 @@
 
 namespace UIRecycleTree {
 	public interface IRecycleDataSource {
-		int count { get; }
-		void SetDataToItem(IRecycleItem recycleItem, int index);
+		int expandedCount { get; }
+		void MergeDataWithItem(RecycleItem recycleItem, int index);
 	}
 }
