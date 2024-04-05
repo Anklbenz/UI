@@ -4,21 +4,24 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace UIMinMaxSlider {
-	//[AddComponentMenu("UI/Slider", 34)]
+namespace UIMinMaxSlider
+{
 	[ExecuteAlways]
 	[RequireComponent(typeof(RectTransform))]
-	public class UIMinMaxSlider : Selectable, IDragHandler, IInitializePotentialDragHandler, ICanvasElement {
+	public class UIRangeSlider : Selectable, IDragHandler, IInitializePotentialDragHandler, ICanvasElement
+	{
 		[Serializable]
-		public class MinMaxSliderEvent : UnityEvent<float, float> {
+		public class MinMaxSliderEvent : UnityEvent<float, float> { }
+
+		public MinMaxSliderEvent onValueChanged {
+			get => m_OnValueChanged;
+			set => m_OnValueChanged = value;
 		}
-		public MinMaxSliderEvent onValueChanged { get { return m_OnValueChanged; } set { m_OnValueChanged = value; } }
 
 		[SerializeField] protected float m_MinValue;
 		[SerializeField] protected float m_MaxValue;
-
 		[SerializeField] private Direction m_Direction = Direction.LeftToRight;
-		[SerializeField] private MinMaxSliderEvent m_OnValueChanged = new MinMaxSliderEvent();
+		[SerializeField] private MinMaxSliderEvent m_OnValueChanged = new();
 		[SerializeField] private RectTransform m_FillRect;
 		[SerializeField] private RectTransform m_MaxHandleRect;
 		[SerializeField] private RectTransform m_MinHandleRect;
@@ -26,7 +29,9 @@ namespace UIMinMaxSlider {
 		[SerializeField] private float m_MaxLimit = 1;
 		[SerializeField] private float m_MinLimit;
 		[SerializeField] private bool m_moveOnlyByHandles;
-		public enum Direction {
+
+		public enum Direction
+		{
 			LeftToRight,
 			RightToLeft,
 			BottomToTop,
@@ -37,10 +42,11 @@ namespace UIMinMaxSlider {
 			get => m_moveOnlyByHandles;
 			set => m_moveOnlyByHandles = value;
 		}
-		
+
 		public RectTransform fillRect {
 			get { return m_FillRect; }
-			set {
+			set
+			{
 				if (m_FillRect == value) return;
 				m_FillRect = value;
 				UpdateCachedReferences();
@@ -50,7 +56,8 @@ namespace UIMinMaxSlider {
 
 		public RectTransform maxHandleRect {
 			get => m_MaxHandleRect;
-			set {
+			set
+			{
 				if (m_MaxHandleRect == value) return;
 				m_MaxHandleRect = value;
 				UpdateCachedReferences();
@@ -60,7 +67,8 @@ namespace UIMinMaxSlider {
 
 		public RectTransform minHandleRect {
 			get => m_MinHandleRect;
-			set {
+			set
+			{
 				if (m_MinHandleRect == value) return;
 				m_MinHandleRect = value;
 				UpdateCachedReferences();
@@ -70,28 +78,34 @@ namespace UIMinMaxSlider {
 
 		public Direction direction {
 			get => m_Direction;
-			set {
+			set
+			{
 				if (m_Direction == value) return;
 				m_Direction = value;
 				UpdateVisuals();
 			}
 		}
+
 		public float minLimit {
 			get => m_MinLimit;
-			set {
+			set
+			{
 				m_MinLimit = value;
 				Set(m_MinValue, m_MaxValue);
 				UpdateVisuals();
 			}
 		}
+
 		public float maxLimit {
 			get => m_MaxLimit;
-			set {
+			set
+			{
 				m_MaxLimit = value;
 				Set(m_MinValue, m_MaxValue);
 				UpdateVisuals();
 			}
 		}
+
 		public virtual float valueMax {
 			get => wholeNumbers ? Mathf.Round(m_MaxValue) : m_MaxValue;
 			set => Set(m_MinValue, value);
@@ -104,7 +118,8 @@ namespace UIMinMaxSlider {
 
 		public bool wholeNumbers {
 			get => m_WholeNumbers;
-			set {
+			set
+			{
 				if (m_WholeNumbers == value) return;
 				Set(m_MinValue, m_MaxValue);
 				UpdateVisuals();
@@ -112,32 +127,39 @@ namespace UIMinMaxSlider {
 		}
 
 		public float minNormalizedValue {
-			get {
+			get
+			{
 				if (Mathf.Approximately(minLimit, maxLimit))
 					return 0;
 				return Mathf.InverseLerp(minLimit, maxLimit, valueMin);
 			}
-			set {
-				this.valueMin = Mathf.Lerp(minLimit, maxLimit, value);
-			}
+			set { this.valueMin = Mathf.Lerp(minLimit, maxLimit, value); }
 		}
 
 		public float maxNormalizedValue {
-			get {
+			get
+			{
 				if (Mathf.Approximately(minLimit, maxLimit))
 					return 0;
 				return Mathf.InverseLerp(minLimit, maxLimit, valueMax);
 			}
-			set {
-				this.valueMax = Mathf.Lerp(minLimit, maxLimit, value);
-			}
+			set { this.valueMax = Mathf.Lerp(minLimit, maxLimit, value); }
 		}
-		private enum Axis {
+
+		private enum Axis
+		{
 			Horizontal = 0,
 			Vertical = 1
 		}
-		private Axis axis { get { return (m_Direction == Direction.LeftToRight || m_Direction == Direction.RightToLeft) ? Axis.Horizontal : Axis.Vertical; } }
-		private bool reverseValue { get { return m_Direction == Direction.RightToLeft || m_Direction == Direction.TopToBottom; } }
+
+		private Axis axis {
+			get { return (m_Direction == Direction.LeftToRight || m_Direction == Direction.RightToLeft) ? Axis.Horizontal : Axis.Vertical; }
+		}
+
+		private bool reverseValue {
+			get { return m_Direction == Direction.RightToLeft || m_Direction == Direction.TopToBottom; }
+		}
+
 		private Image _fillImage;
 		private Transform _fillTransform;
 		private RectTransform _fillContainerRect;
@@ -151,14 +173,17 @@ namespace UIMinMaxSlider {
 		private float _lengthToMax;
 		private float _intervalLength;
 		// field is never assigned warning
-        #pragma warning disable 649
+#pragma warning disable 649
 		private DrivenRectTransformTracker m_Tracker;
-        #pragma warning restore 649
-		// This "delayed" mechanism is required for case 1037681.
+#pragma warning restore 649
 		private bool m_DelayedUpdateVisuals;
-		private float stepSize { get { return wholeNumbers ? 1 : (maxLimit - minLimit) * 0.1f; } }
+
+		private float stepSize {
+			get { return wholeNumbers ? 1 : (maxLimit - minLimit) * 0.1f; }
+		}
+
 		public virtual void SetValueWithoutNotify(float minValue, float maxValue) =>
-				Set(minValue, maxValue, false);
+			Set(minValue, maxValue, false);
 
 		public virtual void Rebuild(CanvasUpdate executing) {
 #if UNITY_EDITOR
@@ -166,8 +191,13 @@ namespace UIMinMaxSlider {
 				onValueChanged.Invoke(valueMin, valueMax);
 #endif
 		}
-		public virtual void LayoutComplete() {}
-		public virtual void GraphicUpdateComplete() {}
+
+		public virtual void LayoutComplete() {
+		}
+
+		public virtual void GraphicUpdateComplete() {
+		}
+
 		protected override void OnEnable() {
 			base.OnEnable();
 			UpdateCachedReferences();
@@ -175,36 +205,17 @@ namespace UIMinMaxSlider {
 			// Update rects since they need to be initialized correctly.
 			UpdateVisuals();
 		}
+
 		protected override void OnDisable() {
 			m_Tracker.Clear();
 			base.OnDisable();
 		}
+
 		protected virtual void Update() {
 			if (m_DelayedUpdateVisuals) {
 				m_DelayedUpdateVisuals = false;
 				Set(m_MinValue, m_MaxValue, false);
 				UpdateVisuals();
-			}
-		}
-
-		protected override void OnDidApplyAnimationProperties() {
-			m_MinValue = ClampValueByLimit(m_MinValue);
-			m_MaxValue = ClampValueByLimit(m_MaxValue);
-			float oldNormalizedValue = maxNormalizedValue;
-			if (_fillContainerRect != null) {
-				if (_fillImage != null && _fillImage.type == Image.Type.Filled)
-					oldNormalizedValue = _fillImage.fillAmount;
-				else
-					oldNormalizedValue = (reverseValue ? 1 - m_FillRect.anchorMin[(int)axis] : m_FillRect.anchorMax[(int)axis]);
-			}
-			else if (_maxHandleContainerRect != null)
-				oldNormalizedValue = (reverseValue ? 1 - m_MaxHandleRect.anchorMin[(int)axis] : m_MaxHandleRect.anchorMin[(int)axis]);
-
-			UpdateVisuals();
-
-			if (oldNormalizedValue != maxNormalizedValue) {
-				UISystemProfilerApi.AddMarker("Slider.value", this);
-				onValueChanged.Invoke(m_MinValue, m_MaxValue);
 			}
 		}
 
@@ -250,11 +261,9 @@ namespace UIMinMaxSlider {
 		}
 
 		protected virtual void Set(float minValue, float maxValue, bool sendCallback = true) {
-			// Clamp the input
 			float newMinValue = ClampValueByLimit(minValue);
 			float newMaxValue = ClampValueByLimit(maxValue);
 
-			// If the stepped value doesn't match the last one, it's time to update
 			if (m_MaxValue == newMaxValue && m_MinValue == newMinValue)
 				return;
 
@@ -270,14 +279,12 @@ namespace UIMinMaxSlider {
 		protected override void OnRectTransformDimensionsChange() {
 			base.OnRectTransformDimensionsChange();
 
-			//This can be invoked before OnEnabled is called. So we shouldn't be accessing other objects, before OnEnable is called.
 			if (!IsActive())
 				return;
 
 			UpdateVisuals();
 		}
 
-		// Force-update the slider. Useful if you've changed the properties and want it to update visually.
 		private void UpdateVisuals() {
 #if UNITY_EDITOR
 			if (!Application.isPlaying)
@@ -342,25 +349,6 @@ namespace UIMinMaxSlider {
 			maxNormalizedValue = Mathf.Clamp(normalizedValue, minNormalizedValue, 1);
 		}
 
-		private bool TryGetCursorNormalizedValue(RectTransform clickRect, PointerEventData eventData, out float value) {
-			value = 0;
-			if (clickRect != null && clickRect.rect.size[(int)axis] > 0) {
-				var position = Vector2.zero;
-				if (!GetRelativeMousePositionForDrag(eventData, ref position))
-					return false;
-
-				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(clickRect, position, eventData.pressEventCamera, out var localCursor))
-					return false;
-
-				localCursor -= clickRect.rect.position;
-
-				float val = Mathf.Clamp01((localCursor - _offset)[(int)axis] / clickRect.rect.size[(int)axis]);
-				value = (reverseValue ? 1f - val : val);
-				return true;
-			}
-			return false;
-		}
-
 		private void UpdateDragFillContainerRect(PointerEventData eventData) {
 			if (!TryGetCursorNormalizedValue(_fillContainerRect, eventData, out var normalizedValue))
 				return;
@@ -382,8 +370,25 @@ namespace UIMinMaxSlider {
 			maxNormalizedValue = Mathf.Clamp(normalizedValue + _lengthToMax, _intervalLength, 1);
 		}
 
-		private bool MayDrag(PointerEventData eventData) =>
-				base.IsActive() && base.IsInteractable() && eventData.button == PointerEventData.InputButton.Left;
+		private bool TryGetCursorNormalizedValue(RectTransform clickRect, PointerEventData eventData, out float value) {
+			value = 0;
+			if (clickRect != null && clickRect.rect.size[(int)axis] > 0) {
+				var position = Vector2.zero;
+				if (!GetRelativeMousePositionForDrag(eventData, ref position))
+					return false;
+
+				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(clickRect, position, eventData.pressEventCamera, out var localCursor))
+					return false;
+
+				localCursor -= clickRect.rect.position;
+
+				float val = Mathf.Clamp01((localCursor - _offset)[(int)axis] / clickRect.rect.size[(int)axis]);
+				value = (reverseValue ? 1f - val : val);
+				return true;
+			}
+
+			return false;
+		}
 
 		public override void OnPointerDown(PointerEventData eventData) {
 			if (!MayDrag(eventData))
@@ -391,19 +396,25 @@ namespace UIMinMaxSlider {
 
 			base.OnPointerDown(eventData);
 			_intervalLength = maxNormalizedValue - minNormalizedValue;
-			_clickedOnMax = _maxHandleContainerRect != null && RectTransformUtility.RectangleContainsScreenPoint(m_MaxHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.enterEventCamera);
-			_clickedOnMin = _minHandleContainerRect != null && RectTransformUtility.RectangleContainsScreenPoint(m_MinHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.enterEventCamera);
-			_clickedOnFill = m_FillRect != null && RectTransformUtility.RectangleContainsScreenPoint(m_FillRect, eventData.pointerPressRaycast.screenPosition, eventData.enterEventCamera);
+			
+			_clickedOnMax = _maxHandleContainerRect != null &&
+			                RectTransformUtility.RectangleContainsScreenPoint(m_MaxHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.enterEventCamera);
+			_clickedOnMin = _minHandleContainerRect != null &&
+			                RectTransformUtility.RectangleContainsScreenPoint(m_MinHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.enterEventCamera);
+			_clickedOnFill = m_FillRect != null &&
+			                 RectTransformUtility.RectangleContainsScreenPoint(m_FillRect, eventData.pointerPressRaycast.screenPosition, eventData.enterEventCamera);
 
 			_offset = Vector2.zero;
 			if (_clickedOnMax) {
-				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_MaxHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.pressEventCamera, out var localMousePos))
+				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_MaxHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.pressEventCamera,
+					    out var localMousePos))
 					return;
 				_offset = localMousePos;
 				UpdateDragMaxHandle(eventData);
 			}
 			else if (_clickedOnMin) {
-				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_MinHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.pressEventCamera, out var localMousePos))
+				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_MinHandleRect, eventData.pointerPressRaycast.screenPosition, eventData.pressEventCamera,
+					    out var localMousePos))
 					return;
 				_offset = localMousePos;
 				UpdateDragMinHandle(eventData);
@@ -473,6 +484,9 @@ namespace UIMinMaxSlider {
 			}*/
 		}
 
+		private bool MayDrag(PointerEventData eventData) =>
+			base.IsActive() && base.IsInteractable() && eventData.button == PointerEventData.InputButton.Left;
+
 		public override Selectable FindSelectableOnLeft() {
 			if (navigation.mode == Navigation.Mode.Automatic && axis == Axis.Horizontal)
 				return null;
@@ -517,9 +531,9 @@ namespace UIMinMaxSlider {
 		}
 
 		private bool GetRelativeMousePositionForDrag(PointerEventData eventData, ref Vector2 pos) {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
 			pos = eventData.position;
-            #else
+#else
             int pressDisplayIndex = eventData.pointerPressRaycast.displayIndex;
             var relativePosition = RelativeMouseAtScaled(eventData.position);
             int currentDisplayIndex = (int)relativePosition.z;
@@ -530,11 +544,32 @@ namespace UIMinMaxSlider {
 
             // If we are not on the main display then we must use the relative position.
             pos = pressDisplayIndex != 0 ? (Vector2)relativePosition : eventData.position;
-            #endif
+#endif
 			return true;
 		}
 
-		#if UNITY_EDITOR
+		protected override void OnDidApplyAnimationProperties() {
+			m_MinValue = ClampValueByLimit(m_MinValue);
+			m_MaxValue = ClampValueByLimit(m_MaxValue);
+			float oldNormalizedValue = maxNormalizedValue;
+			if (_fillContainerRect != null) {
+				if (_fillImage != null && _fillImage.type == Image.Type.Filled)
+					oldNormalizedValue = _fillImage.fillAmount;
+				else
+					oldNormalizedValue = (reverseValue ? 1 - m_FillRect.anchorMin[(int)axis] : m_FillRect.anchorMax[(int)axis]);
+			}
+			else if (_maxHandleContainerRect != null)
+				oldNormalizedValue = (reverseValue ? 1 - m_MaxHandleRect.anchorMin[(int)axis] : m_MaxHandleRect.anchorMin[(int)axis]);
+
+			UpdateVisuals();
+
+			if (oldNormalizedValue != maxNormalizedValue) {
+				UISystemProfilerApi.AddMarker("Slider.value", this);
+				onValueChanged.Invoke(m_MinValue, m_MaxValue);
+			}
+		}
+
+#if UNITY_EDITOR
 		protected override void OnValidate() {
 			base.OnValidate();
 
@@ -542,13 +577,15 @@ namespace UIMinMaxSlider {
 				m_MinLimit = Mathf.Round(m_MinLimit);
 				m_MaxLimit = Mathf.Round(m_MaxLimit);
 			}
+
 			if (IsActive()) {
 				UpdateCachedReferences();
 				m_DelayedUpdateVisuals = true;
 			}
+
 			if (!UnityEditor.PrefabUtility.IsPartOfPrefabAsset(this) && !Application.isPlaying)
 				CanvasUpdateRegistry.RegisterCanvasElementForLayoutRebuild(this);
 		}
-#endif // if UNITY_EDITOR
+#endif 
 	}
 }

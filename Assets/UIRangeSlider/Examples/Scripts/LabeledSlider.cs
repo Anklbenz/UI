@@ -5,7 +5,7 @@
 	namespace UIMinMaxSliderExamples {
 		using UIMinMaxSlider;
 		public class LabeledSlider : MonoBehaviour {
-			[SerializeField] private UIMinMaxSlider slider;
+			[SerializeField] private UIRangeSlider slider;
 			[SerializeField] private TMP_Text minValue, maxValue;
 
 			private void SetValues(float min, float max) {

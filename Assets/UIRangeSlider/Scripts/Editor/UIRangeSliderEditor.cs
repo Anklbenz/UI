@@ -3,22 +3,24 @@ using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UIMinMaxSlider {
-	[CustomEditor(typeof(UIMinMaxSlider), true)]
+namespace UIMinMaxSlider
+{
+	[CustomEditor(typeof(UIRangeSlider), true)]
 	[CanEditMultipleObjects]
-	public class UIMinMaxSliderEditor : SelectableEditor {
+	public class UIRangeSliderEditor : SelectableEditor
+	{
 
 		SerializedProperty m_Direction,
-				m_FillRect,
-				m_MaxHandleRect,
-				m_MinHandleRect,
-				m_MinLimit,
-				m_MaxLimit,
-				m_WholeNumbers,
-				m_MaxValue,
-				m_MinValue,
-				m_OnValueChanged,
-				m_moveOnlyByHandles;
+			m_FillRect,
+			m_MaxHandleRect,
+			m_MinHandleRect,
+			m_MinLimit,
+			m_MaxLimit,
+			m_WholeNumbers,
+			m_MaxValue,
+			m_MinValue,
+			m_OnValueChanged,
+			m_moveOnlyByHandles;
 
 		protected override void OnEnable() {
 			base.OnEnable();
@@ -49,9 +51,9 @@ namespace UIMinMaxSlider {
 				EditorGUI.BeginChangeCheck();
 				EditorGUILayout.PropertyField(m_Direction);
 				if (EditorGUI.EndChangeCheck()) {
-					UIMinMaxSlider.Direction direction = (UIMinMaxSlider.Direction)m_Direction.enumValueIndex;
+					UIRangeSlider.Direction direction = (UIRangeSlider.Direction)m_Direction.enumValueIndex;
 					foreach (var obj in serializedObject.targetObjects) {
-						UIMinMaxSlider slider = obj as UIMinMaxSlider;
+						UIRangeSlider slider = obj as UIRangeSlider;
 						slider.SetDirection(direction, true);
 					}
 				}
@@ -77,37 +79,37 @@ namespace UIMinMaxSlider {
 
 				if (areMinMaxEqual)
 					EditorGUILayout.HelpBox("Min Limit and Max Limit cannot be equal.", MessageType.Warning);
-				
+
 				EditorGUILayout.BeginHorizontal();
-				EditorGUILayout.LabelField("Min Max Value", GUILayout.MinWidth(120)); 
-			    
+				EditorGUILayout.LabelField("Min Max Value", GUILayout.MinWidth(120));
+
 				EditorGUI.BeginChangeCheck();
-				var newMinValue = EditorGUILayout.FloatField(m_MinValue.floatValue,  GUILayout.Width(50));
+				var newMinValue = EditorGUILayout.FloatField(m_MinValue.floatValue, GUILayout.Width(50));
 				if (EditorGUI.EndChangeCheck()) {
 					if (m_WholeNumbers.boolValue ? Mathf.Round(newMinValue) <= m_MaxValue.floatValue : newMinValue <= m_MaxValue.floatValue)
 						m_MinValue.floatValue = newMinValue;
 				}
-				
+
 				var minValue = m_MinValue.floatValue;
 				var maxValue = m_MaxValue.floatValue;
 				EditorGUILayout.MinMaxSlider(ref minValue, ref maxValue, m_MinLimit.floatValue, m_MaxLimit.floatValue, GUILayout.MinWidth(50));
 				m_MinValue.floatValue = minValue;
 				m_MaxValue.floatValue = maxValue;
-			
+
 				EditorGUI.BeginChangeCheck();
-				var newMaxValue = EditorGUILayout.FloatField(m_MaxValue.floatValue,  GUILayout.Width(50));
+				var newMaxValue = EditorGUILayout.FloatField(m_MaxValue.floatValue, GUILayout.Width(50));
 				if (EditorGUI.EndChangeCheck()) {
 					if (m_WholeNumbers.boolValue ? Mathf.Round(newMaxValue) >= m_MinValue.floatValue : newMaxValue >= m_MinValue.floatValue)
 						m_MaxValue.floatValue = newMaxValue;
 				}
-				
+
 				EditorGUILayout.EndHorizontal();
-				
+
 				bool warning = false;
 				foreach (var obj in serializedObject.targetObjects) {
-					UIMinMaxSlider slider = obj as UIMinMaxSlider;
-					UIMinMaxSlider.Direction dir = slider.direction;
-					if (dir == UIMinMaxSlider.Direction.LeftToRight || dir == UIMinMaxSlider.Direction.RightToLeft)
+					UIRangeSlider slider = obj as UIRangeSlider;
+					UIRangeSlider.Direction dir = slider.direction;
+					if (dir == UIRangeSlider.Direction.LeftToRight || dir == UIRangeSlider.Direction.RightToLeft)
 						warning = (slider.navigation.mode != Navigation.Mode.Automatic && (slider.FindSelectableOnLeft() != null || slider.FindSelectableOnRight() != null));
 					else
 						warning = (slider.navigation.mode != Navigation.Mode.Automatic && (slider.FindSelectableOnDown() != null || slider.FindSelectableOnUp() != null));
@@ -121,7 +123,8 @@ namespace UIMinMaxSlider {
 				EditorGUILayout.PropertyField(m_OnValueChanged);
 			}
 			else {
-				EditorGUILayout.HelpBox("Specify a RectTransform for the slider fill or the slider handle or both. Each must have a parent RectTransform that it can slide within.", MessageType.Info);
+				EditorGUILayout.HelpBox("Specify a RectTransform for the slider fill or the slider handle or both. Each must have a parent RectTransform that it can slide within.",
+					MessageType.Info);
 			}
 
 			serializedObject.ApplyModifiedProperties();
