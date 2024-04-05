@@ -23,6 +23,7 @@ MonoBehaviour:
   _iconWidth: 60
   _iconSize: {x: 40, y: 40}
   _checkboxEnabled: 1
+  _recursiveChecked: 1
   _checkedWidth: 60
   _checkedIconSize: {x: 40, y: 40}
   _font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

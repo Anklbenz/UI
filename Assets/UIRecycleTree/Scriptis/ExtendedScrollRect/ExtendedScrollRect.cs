@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UIRecycleTree
+namespace UIRecycleTreeNamespace
 {
     [AddComponentMenu("UI/Scroll Rect", 37)]
     [SelectionBase]

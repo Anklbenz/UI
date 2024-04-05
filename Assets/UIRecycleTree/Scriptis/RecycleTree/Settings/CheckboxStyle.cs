@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[Serializable]
 	public class CheckboxStyle {
 		public Sprite checkedSprite;

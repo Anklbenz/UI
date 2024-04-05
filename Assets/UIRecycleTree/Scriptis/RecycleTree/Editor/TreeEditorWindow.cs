@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEditor.IMGUI.Controls;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	internal class TreeEditorWindow : EditorWindow {
 		private const float SPLIT_WIDTH = 2;
 		private const int WINDOW_WIDTH = 600;

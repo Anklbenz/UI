@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEditor.AnimatedValues;
 using UnityEditor;
 
-namespace UIRecycleTree
+namespace UIRecycleTreeNamespace
 {
     [CustomEditor(typeof(ExtendedScrollRect), true)]
     [CanEditMultipleObjects]

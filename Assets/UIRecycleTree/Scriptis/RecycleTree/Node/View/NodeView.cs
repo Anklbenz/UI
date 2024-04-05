@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public class NodeView : RecycleItem, IPointerClickHandler {
 		private const float DOUBLE_TAP_MAX_DELAY = 0.4f;
 		private const float DOUBLE_TAP_MIN_DELAY = 0.07f;

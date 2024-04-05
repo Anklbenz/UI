@@ -3,10 +3,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[Serializable]
-	public class NodeEvent : UnityEvent<Node> {
-	}
+	public class NodeEvent : UnityEvent<Node> {}
 
 	public class UIRecycleTree : RecycleView, IRecycleDataSource {
 		private const string ITEM_RESOURCE_NAME = "UINodeView_template";
@@ -36,36 +35,59 @@ namespace UIRecycleTree {
 		public NodeStyle[] nodeStyles => nodeStylesArray;
 		public int expandedCount => expandedNodes.Count;
 		public Node selectedNode => _selectedNode;
-
+		
 		private Node _selectedNode;
 		private float _maxItemWidth;
-
+		
 		public void ExpandAll() {
 			foreach (var node in nodes)
-				node.ExpandAll();
+				node.ExpandAllWithoutNotify();
 			Rebuild();
 		}
 		public void CollapseAll() {
 			foreach (var node in nodes)
-				node.CollapseAll();
+				node.CollapseAllWithoutNotify();
 			Rebuild();
 		}
 
-		private void OnNodeSelect(Node node) {
+		public void SelectNode(Node node) {
+			if (_selectedNode != null) 
+				DeselectAndNotify(_selectedNode);
+			
+			SelectAndNotify(node);
+			
+			base.Repaint();
+		}
+
+		private void OnNodeClicked(Node node) {
 			if (_selectedNode == null) {
 				SelectAndNotify(node);
 			}
 			else if (_selectedNode == node) {
-				Deselect(node);
+				DeselectAndNotify(node);
 			}
 			else {
-				_selectedNode.isSelected = false;
+				DeselectAndNotify(_selectedNode);
 				SelectAndNotify(node);
 			}
 			base.Repaint();
 
 			onSelectionChanged?.Invoke();
 		}
+		
+		private void SelectAndNotify(Node node) {
+			_selectedNode = node;
+			_selectedNode.SetSelectedWithoutNotify(true);
+
+			onNodeSelected?.Invoke(node);
+		}
+		private void DeselectAndNotify(Node node) {
+			_selectedNode = null;
+			node.SetSelectedWithoutNotify(false);
+
+			onNodeDeselected?.Invoke(node);
+		}
+
 		private void OnNodeExpandClicked(Node node) {
 			if (!node.hasChildren) return;
 			node.SetExpandedStateWithoutNotify(!node.isExpanded);
@@ -74,35 +96,25 @@ namespace UIRecycleTree {
 			onExpandStateChanged?.Invoke(node);
 		}
 
-		private void OnNodeCheckedClicked(Node node) {
+		private void ChangeNodeCheckedState(Node node) {
 			node.isChecked = !node.isChecked;
 		}
 
 		public void OnNodeCheckedChangedNotify(Node node) =>
-				onNodeCheckedChanged?.Invoke(node);
-		
+			onNodeCheckedChanged?.Invoke(node);
+
 		private void OnNodeDoubleClick(Node node) =>
 				onNodeDblClick?.Invoke(node);
 
-		private void SelectAndNotify(Node node) {
-			_selectedNode = node;
-			_selectedNode.isSelected = true;
 
-			onNodeSelected?.Invoke(node);
-		}
-		private void Deselect(Node node) {
-			_selectedNode = null;
-			node.isSelected = false;
-
-			onNodeDeselected?.Invoke(node);
-		}
 		public void Rebuild() {
-			if (!Application.isPlaying) return;
+			if (!Application.isPlaying|| !gameObject.activeInHierarchy) return;
+			
 			expandedNodes = new List<Node>();
 			root.GetAllExpandedChildrenRecursive(expandedNodes);
 			StartCoroutine(Reload());
 		}
-
+		
 		protected override RecycleItem CreateItem() {
 			var item = Instantiate(Resources.Load<NodeView>(ITEM_RESOURCE_NAME), content, false);
 			item.nodePrefs = nodePrefs;
@@ -130,29 +142,25 @@ namespace UIRecycleTree {
 			else
 				nodeView.state = node.isExpanded ? ExpandedState.Expanded : ExpandedState.Collapsed;
 
-			nodeView.ClickedEvent += delegate { OnNodeSelect(node); };
+			nodeView.ClickedEvent += delegate { OnNodeClicked(node); };
 			nodeView.ExpandClickEvent += delegate { OnNodeExpandClicked(node); };
-			nodeView.CheckboxClickedEvent += delegate { OnNodeCheckedClicked(node); };
+			nodeView.CheckboxClickedEvent += delegate { ChangeNodeCheckedState(node); };
 			nodeView.DoubleClickedEvent += delegate { OnNodeDoubleClick(node); };
 			nodeView.Refresh();
 		}
 
-		public int GetNextId() {
-			if (nodes.Count != 1)
-				return ++lastNodeId;
-			lastNodeId = 0;
-			return lastNodeId;
-		}
+		public int GetNextId() =>
+			 ++lastNodeId;
 
 		public Node FindNodeRecursive(int id) =>
 				root.FindNodeByIdRecursive(id, root);
 
 		public Node[] FindNodesByNameRecursive(string searchName) {
 			var foundedItems = new List<Node>();
-			root.FindChildByNameRecursive(searchName, foundedItems);
+			root.FindNodesByNameRecursive(searchName, foundedItems);
 			return foundedItems.ToArray();
 		}
-
+		
 		protected override void OnPoolIncrease(RecycleItem item) =>
 				((NodeView)item).WidthChangedEvent += UpdateContentWidth;
 

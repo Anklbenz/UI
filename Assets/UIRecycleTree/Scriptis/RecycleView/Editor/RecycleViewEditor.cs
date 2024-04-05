@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[CustomEditor(typeof(RecycleView))]
 	public class RecycleViewEditor : ExtendedScrollRectEditor {
 		private SerializedProperty _template;

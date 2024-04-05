@@ -5,10 +5,10 @@ using System.Collections;
 using System.Collections.ObjectModel;
 using UnityEngine.EventSystems;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public class RecycleView : ExtendedScrollRect {
-		private const int EXTRA_ITEMS_COUNT = 6;
-		private const int RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS = 4;
+		private const int EXTRA_ITEMS_COUNT = 20;
+		private const int RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS = 10;
 		private const int DEFAULT_ITEM_HEIGHT = 30;
 
 		[SerializeField] private RecycleItem template;
@@ -43,11 +43,11 @@ namespace UIRecycleTree {
 		private int lowestRecyclingIndex => _topmostRecyclingIndex + _visibleItemsPoolSize;
 		
 		//for CanvasScaler "Scale with Screen Size mode"
-		private float scaledItemHeight => (itemHeight + spacing) * transform.lossyScale.x;
-		private float recycleVerticalThreshold => scaledItemHeight * RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS;
-		private float extraContentSize => (itemHeight + spacing) * EXTRA_ITEMS_COUNT;
+		private float scaledItemHeight => (itemHeight + spacing) *transform.lossyScale.x;
+		private float recycleVerticalThreshold =>/*(itemHeight + spacing) */scaledItemHeight * RECYCLE_BOUNDS_THRESHOLD_IN_ITEMS;
+		private float extraContentSize =>  (itemHeight + spacing) * EXTRA_ITEMS_COUNT;
 		private float verticalPaddingValue => contentPadding.top + contentPadding.bottom;
-		private Vector2 contentOffset => new(0, itemHeight + spacing);
+		private Vector2 contentOffset => new(0, (itemHeight + spacing));
 
 		private readonly Vector3[] _corners = new Vector3[4];
 		private ObservableCollection<RecycleItem> _recycleItemsPool = new();
@@ -58,6 +58,7 @@ namespace UIRecycleTree {
 		public IEnumerator Reload() {
 		
 			if (recycleDataSource == null) yield break;
+		
 			_isReloading = true;
 
 			BeforeReload();
@@ -69,8 +70,10 @@ namespace UIRecycleTree {
 
 			var newVisibleItemsCount = Mathf.Min(_requiredItemsCountOnScreen, recycleDataSource.expandedCount);
 
-			var scrollContentSizeY = newVisibleItemsCount * (itemHeight + spacing) - spacing + verticalPaddingValue;
+			var scrollContentSizeY = newVisibleItemsCount * (itemHeight + spacing)- spacing + verticalPaddingValue;
+		
 			content.sizeDelta = new Vector2(content.sizeDelta.x, scrollContentSizeY);
+
 
 			if (newVisibleItemsCount > _visibleItemsPoolSize)
 				IncreasePool(newVisibleItemsCount);
@@ -87,6 +90,7 @@ namespace UIRecycleTree {
 		}
 
 		public void Repaint() {
+		if( !gameObject.activeInHierarchy) return;
 			var isVisibleContentSmallerThanPool = recycleDataSource.expandedCount - _topmostRecyclingIndex < _visibleItemsPoolSize;
 			int currentIndex = isVisibleContentSmallerThanPool ? recycleDataSource.expandedCount - _visibleItemsPoolSize : _topmostRecyclingIndex;
 
@@ -222,8 +226,12 @@ namespace UIRecycleTree {
 
 		private void SetRecyclingBounds() {
 			viewport.GetWorldCorners(_corners);
+		
 			_recyclableViewBounds.min = new Vector3(_corners[0].x, _corners[0].y - recycleVerticalThreshold);
 			_recyclableViewBounds.max = new Vector3(_corners[2].x, _corners[2].y + recycleVerticalThreshold);
+
+			/*_recyclableViewBounds.min *= transform.lossyScale.x;
+			_recyclableViewBounds.max /= transform.lossyScale.x;*/
 		}
 
 		protected override void OnRectTransformDimensionsChange() {

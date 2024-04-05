@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public static class WindowExtensions {
 		public static void CenterOnMainWin(this EditorWindow window) {
 			Rect main = EditorGUIUtility.GetMainWindowPosition();

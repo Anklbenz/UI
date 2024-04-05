@@ -1,5 +1,5 @@
 using UnityEditor;
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public static class ContextMenuUtility {
 		private const string ELEMENT_NAME_IN_RESOURCES = "UIRecycleTree"; 
 		

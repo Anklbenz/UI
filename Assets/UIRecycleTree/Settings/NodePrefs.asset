@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: NodePrefs
   m_EditorClassIdentifier: 
   _fullRectSelect: 1
-  m_childIndent: 55
-  m_spacing: 1
-  m_contentLeftOffset: 10
-  m_contentRightOffset: 20
+  _childIndent: 55
+  _spacing: 1
+  _contentLeftOffset: 10
+  _contentRightOffset: 10
   _toggleWidth: 60
-  _toggleIconSize: {x: 40, y: 40}
+  _toggleIconSize: {x: 25, y: 25}
   _iconEnabled: 1
   _iconWidth: 60
-  _iconSize: {x: 40, y: 40}
+  _iconSize: {x: 25, y: 25}
   _checkboxEnabled: 1
+  _recursiveChecked: 1
   _checkedWidth: 60
-  _checkedIconSize: {x: 40, y: 40}
+  _checkedIconSize: {x: 25, y: 25}
   _font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   _fontSize: 35

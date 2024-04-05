@@ -4,7 +4,7 @@ using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityObject = UnityEngine.Object;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	internal class EditorTree : TreeView {
 		private readonly UIRecycleTree _tree;
 		private const float ROW_HEIGHT = 18;

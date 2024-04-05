@@ -1,10 +1,10 @@
 using TMPro;
-using UIRecycleTree;
+using UIRecycleTreeNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Example : MonoBehaviour {
-	[SerializeField] private UIRecycleTree.UIRecycleTree treeView;
+	[SerializeField] private UIRecycleTreeNamespace.UIRecycleTree treeView;
 	[SerializeField] protected GameObject target;
 	[SerializeField] protected Button button, expand, collapse, delete;
 	[SerializeField] private TMP_Text text, nodesCountText;
@@ -31,7 +31,7 @@ public class Example : MonoBehaviour {
 	}
 	private void OnChecked(Node arg0) {
 		Debug.Log(arg0.name + "Checked");
-		}
+	}
 	private void SelectionChanged() {
 		Debug.Log("Selection Changed");
 	}
@@ -42,6 +42,7 @@ public class Example : MonoBehaviour {
 		obj.isFaded = !obj.isFaded;
 	}
 	private void GetPath(Node selected) {
+		Debug.Log("Expanded " +  selected.isExpanded);
 		text.text = selected.fullPath;
 	}
 	private void Delete() {
@@ -91,11 +92,11 @@ public class Example : MonoBehaviour {
 		//	var n = new Node(treeView, array, "n");
 		//	n3.nodes.Add(n31);
 
-		treeView.nodes.Add(array); //.nodes.AddFluent("n1-0");
+		treeView.nodes.AddRange(array); //.nodes.AddFluent("n1-0");
 		n0.nodes.AddFluent(n10).nodes.AddFluent(n11);
 		n0.nodes.Add(n9);
 
-		n2.nodes.Add(new Node[] {n20, n21});
+		n2.nodes.AddRange(new Node[] {n20, n21});
 		n20.nodes.Add(n200);
 
 		//	Debug.Log(n2.fullPath);

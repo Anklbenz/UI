@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[Serializable]
 	public class NodeCollection : IList<Node> {
 		public int Count => _childNodes.Count;
@@ -15,9 +15,10 @@ namespace UIRecycleTree {
 			_childNodes = new();
 		}
 
-		public void Add(Node[] array) {
+		public void AddRange(Node[] array) {
 			foreach (var node in array)
-				Add(node);
+				AddWithoutNotify(node);
+			CollectionChangedNotify();
 		}
 
 		public Node AddFluent(string name) {
@@ -32,13 +33,15 @@ namespace UIRecycleTree {
 
 		public void Add(Node node) {
 			if (node == null) return;
+			AddWithoutNotify(node);
+			if (node.CheckAllParentExpanded())
+				CollectionChangedNotify();
+		}
 
+		private void AddWithoutNotify(Node node) {
 			_childNodes.Add(node);
 			node.parentNode = _owner;
 			node.tree = _owner.tree;
-
-			if (node.CheckAllParentExpanded())
-				CollectionChangedNotify();
 		}
 
 		public void Clear() {
@@ -50,7 +53,7 @@ namespace UIRecycleTree {
 			if (node == null) return false;
 
 			bool treeNotifyNeeded = node.CheckAllParentExpanded();
-
+			
 			var removed = _childNodes.Remove(node);
 			if (!removed) return false;
 

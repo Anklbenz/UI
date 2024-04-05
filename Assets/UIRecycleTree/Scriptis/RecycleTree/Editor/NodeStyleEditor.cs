@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 
 
 

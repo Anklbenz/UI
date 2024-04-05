@@ -4,7 +4,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public static class CreateUtility {
 		private const string CANVAS_PREFAB_NAME_IN_RESOURCES = "Canvas";
 		public static void CreateUIElement(string path) {

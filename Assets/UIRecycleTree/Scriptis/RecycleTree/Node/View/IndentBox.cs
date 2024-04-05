@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public class IndentBox : MonoBehaviour {
 		private RectTransform _rectTransform;
 		public float indent {

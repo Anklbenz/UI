@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
 using System.Text;
-using Unity.VisualScripting;
 using System.Collections.Generic;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[Serializable]
 	public class Node {
 		private const short ROOT_INDENT = -1;
@@ -24,7 +23,7 @@ namespace UIRecycleTree {
 			get => _isExpanded;
 			set {
 				if (value == _isChecked) return;
-				_isExpanded = value;
+				SetExpandedStateWithoutNotify(value);
 
 				if (tree != null)
 					tree.Rebuild();
@@ -32,14 +31,22 @@ namespace UIRecycleTree {
 		}
 		public bool isSelected {
 			get => _isSelected;
-			set => _isSelected = value;
+			set {
+				if (value == _isSelected) return;
+			//	SetSelectedWithoutNotify(value);
+				
+				if(tree!=null)
+					tree.SelectNode(this);
+				
+			}
 		}
 		public bool isChecked {
 			get => _isChecked;
 			set {
 				if (value == _isChecked) return;
 
-				_isChecked = value;
+				SetCheckedWithoutNotify(value);
+
 				if (tree != null) {
 					if (tree.recursiveChecked)
 						ChangeIsCheckedStateForAllChildren(_isChecked);
@@ -122,6 +129,21 @@ namespace UIRecycleTree {
 		public Node() =>
 				nodeCollection = new NodeCollection(this);
 		
+		public bool TryCastData<T>(out T castedData) where T :class {
+			castedData = null;
+			if (data == null)
+				return false;
+			
+			try {
+				castedData = (T)data;
+				return true;
+			}
+			catch {
+				castedData = null;
+				return false;
+			}
+		}
+		
 		public bool CheckAllParentExpanded() {
 			if (parent == null)
 				return true;
@@ -155,7 +177,7 @@ namespace UIRecycleTree {
 			foreach (var node in nodeCollection)
 				node.CollapseAllWithoutNotify();
 
-			_isExpanded = true;
+			_isExpanded = false;
 		}
 
 		public void SetCheckedWithoutNotify(bool nodeIsChecked) =>
@@ -167,13 +189,54 @@ namespace UIRecycleTree {
 		public void SetSelectedWithoutNotify(bool nodeIsSelected) =>
 				_isSelected= nodeIsSelected;
 
+		public Node[] GetAllChildrenRecursive() {
+			List<Node> childList = new() {this};
+			GetAllChildrenRecursive(childList);
+			return childList.ToArray();
+		}
+
 		public void GetAllChildrenRecursive(List<Node> childList) {
 			foreach (var node in nodes) {
 				childList.Add(node);
 				node.GetAllChildrenRecursive(childList);
 			}
 		}
-
+		
+		public Node FindNodeByDataRecursive(object searchedData) {
+			foreach (var node in nodes) {
+				if (ReferenceEquals(node.data, searchedData))
+					return node;
+				if (!node.hasChildren)
+					continue;
+				var foundNode = node.FindNodeByDataRecursive(searchedData);
+				if (foundNode != null)
+					return foundNode;
+			}
+			return null;
+		}
+		
+		public Node FindNodeByNameRecursive(string searchedName) {
+			foreach (var node in nodes) {
+				if (node.name == searchedName)
+					return node;
+				if (!node.hasChildren)
+					continue;
+				var foundNode = node.FindNodeByDataRecursive(searchedName);
+				if (foundNode != null)
+					return foundNode;
+			}
+			return null;
+		}
+		
+		public void FindNodesByNameRecursive(string searchName, List<Node> foundedItems) {
+			foreach (var node in nodes) {
+				if (node.name == searchName) 
+					foundedItems.Add(node);
+				
+				if (node.hasChildren)
+					node.FindNodesByNameRecursive(searchName, foundedItems);
+			}
+		}
 		public void GetAllExpandedChildrenRecursive(List<Node> childList) {
 			foreach (var node in nodes) {
 				childList.Add(node);
@@ -209,21 +272,22 @@ namespace UIRecycleTree {
 			return null;
 		}
 
-		public void FindChildByNameRecursive(string searchName, List<Node> foundedItems) {
+		public void FindNodeByDataRecursive(object searchObject, List<Node> foundedItems) {
 			foreach (var node in nodes) {
-				if (node.name == searchName)
+				if (ReferenceEquals(node.data, searchObject)) 
 					foundedItems.Add(node);
+				
 				if (node.hasChildren)
-					node.FindChildByNameRecursive(searchName, foundedItems);
+					node.FindNodeByDataRecursive(searchObject, foundedItems);
 			}
 		}
-
-		public void FindAllChildrenWithIsCheckedStateRecursive(List<Node> foundedItems) {
+		
+		public void FindAllIsCheckedNodesRecursive(List<Node> foundedItems) {
 			foreach (var node in nodes) {
 				if (node._isChecked)
 					foundedItems.Add(node);
 				if (node.hasChildren)
-					node.FindAllChildrenWithIsCheckedStateRecursive(foundedItems);
+					node.FindAllIsCheckedNodesRecursive(foundedItems);
 			}
 		}
 
@@ -236,7 +300,7 @@ namespace UIRecycleTree {
 					node.ChangeIsCheckedStateForAllChildren(isChecked);
 			}
 		}
-		
+
 		private void GetFullPath(StringBuilder path, string pathSeparator) {
 			if (parent == null)
 				return;

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[CreateAssetMenu(menuName = "Node/NodePrefs", fileName = "NodePrefs", order = 0)]
 	public class NodePrefs : ScriptableObject {
 		[SerializeField] private bool _fullRectSelect;

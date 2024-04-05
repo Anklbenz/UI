@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public class CheckboxControl : Selectable, IPointerClickHandler {
 		public event Action ClickedEvent;
 

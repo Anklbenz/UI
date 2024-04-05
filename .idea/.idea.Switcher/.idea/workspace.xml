@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Example.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Example.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Scripts/Example1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Examples/Example1/Scripts/Example1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/UIRecycleTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/UIRecycleTree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UITree/UITree/Scripts/NodeSettings/NodeSettings.cs.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +122,7 @@
       <workItem from="1709113062274" duration="19142000" />
       <workItem from="1709202694965" duration="56211000" />
       <workItem from="1711110059588" duration="3001000" />
-      <workItem from="1711114921296" duration="2028000" />
+      <workItem from="1711114921296" duration="2344000" />
     </task>
     <servers />
   </component>
@@ -156,36 +147,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs</url>
-          <line>42</line>
-          <properties documentPath="C:\Users\mariukh\Unity\UI\Switcher\Assets\UIRecycleTree\Scriptis\RecycleTree\Node\Node.cs" initialLine="42" containingFunctionPresentation="property 'isChecked'">
-            <startOffsets>
-              <option value="1158" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1175" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/UIRecycleTree/Scriptis/RecycleTree/Node/Node.cs</url>
-          <line>233</line>
-          <properties documentPath="C:\Users\mariukh\Unity\UI\Switcher\Assets\UIRecycleTree\Scriptis\RecycleTree\Node\Node.cs" initialLine="233" containingFunctionPresentation="method 'ChangeIsCheckedStateForAllChildren'">
-            <startOffsets>
-              <option value="5596" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5634" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#UIRecycleTree.TreeView" memberName="pathSeparator" />

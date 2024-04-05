@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	[CreateAssetMenu(menuName = "Node/NodeStyle", fileName = "NodeStyle", order = 0)]
 	public class NodeStyle : ScriptableObject {
 		[SerializeField] private ExpandStyle _expandToggleStyle;

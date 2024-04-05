@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace UIRecycleTree{
+namespace UIRecycleTreeNamespace{
 
 	public static class UIRectTransformExtension {
 		public static Vector3[] GetWorldCorners(this RectTransform rectTransform) {

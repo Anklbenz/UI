@@ -1,4 +1,4 @@
-namespace UIRecycleTree {
+namespace UIRecycleTreeNamespace {
 	public interface IRecycleItem {
 	}
 }
