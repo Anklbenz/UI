@@ -2,7 +2,7 @@ using UnityEditor;
 
 namespace AcceptSlider {
 	[CustomEditor(typeof(UIAcceptSlider))]
-	public class UINullableToggleEditor : UnityEditor.UI.SliderEditor {
+	public class UIAcceptSliderEditor : UnityEditor.UI.SliderEditor {
 		private const string RESET_IF_REACHED_FIELD_NAME = "Reset If Reached";
 		private SerializedProperty _onAccept, _onReject, _resetIfReached;
 		private UIAcceptSlider _uiAcceptSlider;
