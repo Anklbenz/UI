@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="" />
+    <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Examples/Scripts/LabeledSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Examples/Scripts/LabeledSlider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/ContextMenuUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/ContextMenuUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/CreateUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/CreateUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/UIRangeSliderEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/UIRangeSliderEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/UIRangeSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/UIRangeSlider.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +42,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIAcceptSlider/UIAcceptSlider/Scripts/Editor/UIAcceptSliderEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/Example/Example.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UITree/UITree/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.core@1.4.3/Editor/Core/UiHelpers/SliderToggleUiHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.6.4/Editor/Items/ItemsUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/SliderEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -72,7 +78,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.12f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\mariukh\Unity\Switcher -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\mariukh\Unity\Switcher" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -89,10 +95,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12424">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12424" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -123,6 +129,7 @@
       <workItem from="1709202694965" duration="56211000" />
       <workItem from="1711110059588" duration="3001000" />
       <workItem from="1711114921296" duration="2344000" />
+      <workItem from="1712750453026" duration="1174000" />
     </task>
     <servers />
   </component>

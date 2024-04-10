@@ -3,7 +3,7 @@
 	using UnityEngine;
 
 	namespace UIMinMaxSliderExamples {
-		using UIMinMaxSlider;
+		using UIRangeSliderNamespace;
 		public class LabeledSlider : MonoBehaviour {
 			[SerializeField] private UIRangeSlider slider;
 			[SerializeField] private TMP_Text minValue, maxValue;
@@ -14,11 +14,11 @@
 			}
 
 			private void OnEnable() {
-				slider.onValueChanged.AddListener(SetValues);
+				slider.onValuesChanged.AddListener(SetValues);
 			}
 
 			private void OnDisable() {
-				slider.onValueChanged.RemoveListener(SetValues);
+				slider.onValuesChanged.RemoveListener(SetValues);
 			}
 
 			private void Awake() {

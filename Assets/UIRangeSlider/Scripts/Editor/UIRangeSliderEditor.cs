@@ -3,24 +3,23 @@ using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UIMinMaxSlider
-{
+namespace UIRangeSliderNamespace {
 	[CustomEditor(typeof(UIRangeSlider), true)]
 	[CanEditMultipleObjects]
-	public class UIRangeSliderEditor : SelectableEditor
-	{
-
+	public class UIRangeSliderEditor : SelectableEditor {
 		SerializedProperty m_Direction,
-			m_FillRect,
-			m_MaxHandleRect,
-			m_MinHandleRect,
-			m_MinLimit,
-			m_MaxLimit,
-			m_WholeNumbers,
-			m_MaxValue,
-			m_MinValue,
-			m_OnValueChanged,
-			m_moveOnlyByHandles;
+				m_FillRect,
+				m_MaxHandleRect,
+				m_MinHandleRect,
+				m_MinLimit,
+				m_MaxLimit,
+				m_WholeNumbers,
+				m_MaxValue,
+				m_MinValue,
+				m_OnValuesChanged,
+				m_OnMaxValueChanged,
+				m_OnMinValueChanged,
+				m_moveOnlyByHandles;
 
 		protected override void OnEnable() {
 			base.OnEnable();
@@ -33,7 +32,9 @@ namespace UIMinMaxSlider
 			m_WholeNumbers = serializedObject.FindProperty("m_WholeNumbers");
 			m_MaxValue = serializedObject.FindProperty("m_MaxValue");
 			m_MinValue = serializedObject.FindProperty("m_MinValue");
-			m_OnValueChanged = serializedObject.FindProperty("m_OnValueChanged");
+			m_OnValuesChanged = serializedObject.FindProperty("m_OnValuesChanged");
+			m_OnMaxValueChanged = serializedObject.FindProperty("m_OnMaxValueChanged");
+			m_OnMinValueChanged = serializedObject.FindProperty("m_OnMinValueChanged");
 			m_moveOnlyByHandles = serializedObject.FindProperty("m_moveOnlyByHandles");
 		}
 
@@ -120,11 +121,13 @@ namespace UIMinMaxSlider
 
 				// Draw the event notification options
 				EditorGUILayout.Space();
-				EditorGUILayout.PropertyField(m_OnValueChanged);
+				EditorGUILayout.PropertyField(m_OnValuesChanged);
+				EditorGUILayout.PropertyField(m_OnMaxValueChanged);
+				EditorGUILayout.PropertyField(m_OnMinValueChanged);
 			}
 			else {
 				EditorGUILayout.HelpBox("Specify a RectTransform for the slider fill or the slider handle or both. Each must have a parent RectTransform that it can slide within.",
-					MessageType.Info);
+						MessageType.Info);
 			}
 
 			serializedObject.ApplyModifiedProperties();

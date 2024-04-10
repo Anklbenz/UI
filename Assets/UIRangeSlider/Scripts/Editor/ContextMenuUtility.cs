@@ -1,5 +1,5 @@
 using UnityEditor;
-namespace UIMinMaxSlider  {
+namespace UIRangeSliderNamespace  {
 	public static class ContextMenuUtility {
 		private const string ELEMENT_NAME_IN_RESOURCES = "UIRangeSlider"; 
 		

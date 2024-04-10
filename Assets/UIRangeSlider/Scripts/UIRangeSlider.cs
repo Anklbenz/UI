@@ -4,24 +4,41 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace UIMinMaxSlider
+namespace UIRangeSliderNamespace
 {
 	[ExecuteAlways]
 	[RequireComponent(typeof(RectTransform))]
 	public class UIRangeSlider : Selectable, IDragHandler, IInitializePotentialDragHandler, ICanvasElement
 	{
-		[Serializable]
+		[Serializable] public class ValuesChangedEvent : UnityEvent<float, float> {}
+		[Serializable] public class ValueChangedEvent : UnityEvent<float> {}
+		
+		public ValuesChangedEvent onValuesChanged { 
+			get => m_OnValuesChanged;
+			set => m_OnValuesChanged = value;
+		}
+		public ValueChangedEvent onMaxValueChanged { 
+			get => m_OnMaxValueChanged;
+			set => m_OnMaxValueChanged = value;
+		}
+		public ValueChangedEvent onMinValueChanged {
+			get => m_OnMinValueChanged;
+			set => m_OnMinValueChanged = value;
+		}
+		/*[Serializable]
 		public class MinMaxSliderEvent : UnityEvent<float, float> { }
 
 		public MinMaxSliderEvent onValueChanged {
 			get => m_OnValueChanged;
 			set => m_OnValueChanged = value;
-		}
+		}*/
+		[SerializeField] private ValuesChangedEvent m_OnValuesChanged = new();
+		[SerializeField] private ValueChangedEvent m_OnMaxValueChanged = new();
+		[SerializeField] private ValueChangedEvent m_OnMinValueChanged = new();
 
 		[SerializeField] protected float m_MinValue;
 		[SerializeField] protected float m_MaxValue;
 		[SerializeField] private Direction m_Direction = Direction.LeftToRight;
-		[SerializeField] private MinMaxSliderEvent m_OnValueChanged = new();
 		[SerializeField] private RectTransform m_FillRect;
 		[SerializeField] private RectTransform m_MaxHandleRect;
 		[SerializeField] private RectTransform m_MinHandleRect;
@@ -187,8 +204,11 @@ namespace UIMinMaxSlider
 
 		public virtual void Rebuild(CanvasUpdate executing) {
 #if UNITY_EDITOR
-			if (executing == CanvasUpdate.Prelayout)
-				onValueChanged.Invoke(valueMin, valueMax);
+			if (executing == CanvasUpdate.Prelayout) {
+				onValuesChanged.Invoke(valueMin, valueMax);
+				onMaxValueChanged.Invoke(valueMax);
+				onMinValueChanged.Invoke(valueMin);
+			}
 #endif
 		}
 
@@ -267,12 +287,20 @@ namespace UIMinMaxSlider
 			if (m_MaxValue == newMaxValue && m_MinValue == newMinValue)
 				return;
 
-			m_MinValue = newMinValue;
-			m_MaxValue = newMaxValue;
+			if (m_MaxValue != newMaxValue) {
+				m_MaxValue = newMaxValue;
+				m_OnMaxValueChanged.Invoke(newMaxValue);
+			}
+
+			if (m_MinValue != newMinValue) {
+				m_MinValue = newMinValue;
+				m_OnMinValueChanged.Invoke(newMinValue);
+			}
+			
 			UpdateVisuals();
 			if (sendCallback) {
 				UISystemProfilerApi.AddMarker("Slider.value", this);
-				m_OnValueChanged.Invoke(newMinValue, newMaxValue);
+				m_OnValuesChanged.Invoke(newMinValue, newMaxValue);
 			}
 		}
 
@@ -374,7 +402,7 @@ namespace UIMinMaxSlider
 			value = 0;
 			if (clickRect != null && clickRect.rect.size[(int)axis] > 0) {
 				var position = Vector2.zero;
-				if (!GetRelativeMousePositionForDrag(eventData, ref position))
+				if (!MultipleDisplayUtilities.GetRelativeMousePositionForDrag(eventData, ref position))
 					return false;
 
 				if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(clickRect, position, eventData.pressEventCamera, out var localCursor))
@@ -529,25 +557,7 @@ namespace UIMinMaxSlider
 			if (reverseValue != oldReverse)
 				RectTransformUtility.FlipLayoutOnAxis(transform as RectTransform, (int)axis, true, true);
 		}
-
-		private bool GetRelativeMousePositionForDrag(PointerEventData eventData, ref Vector2 pos) {
-#if UNITY_EDITOR
-			pos = eventData.position;
-#else
-            int pressDisplayIndex = eventData.pointerPressRaycast.displayIndex;
-            var relativePosition = RelativeMouseAtScaled(eventData.position);
-            int currentDisplayIndex = (int)relativePosition.z;
-
-            // Discard events on a different display.
-            if (currentDisplayIndex != pressDisplayIndex)
-                return false;
-
-            // If we are not on the main display then we must use the relative position.
-            pos = pressDisplayIndex != 0 ? (Vector2)relativePosition : eventData.position;
-#endif
-			return true;
-		}
-
+		
 		protected override void OnDidApplyAnimationProperties() {
 			m_MinValue = ClampValueByLimit(m_MinValue);
 			m_MaxValue = ClampValueByLimit(m_MaxValue);
@@ -565,7 +575,7 @@ namespace UIMinMaxSlider
 
 			if (oldNormalizedValue != maxNormalizedValue) {
 				UISystemProfilerApi.AddMarker("Slider.value", this);
-				onValueChanged.Invoke(m_MinValue, m_MaxValue);
+				onValuesChanged.Invoke(m_MinValue, m_MaxValue);
 			}
 		}
 

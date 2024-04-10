@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -816,12 +816,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 607655617}
+  m_OnValuesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMaxValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMinValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_MinValue: 0
   m_MaxValue: 100
   m_Direction: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
   m_FillRect: {fileID: 607655616}
   m_MaxHandleRect: {fileID: 1289527645}
   m_MinHandleRect: {fileID: 2049525301}
@@ -1451,12 +1457,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 267802344}
+  m_OnValuesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMaxValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMinValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_MinValue: 0
   m_MaxValue: 20
   m_Direction: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
   m_FillRect: {fileID: 267802343}
   m_MaxHandleRect: {fileID: 797389497}
   m_MinHandleRect: {fileID: 1775322848}
@@ -2321,12 +2333,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1315532891}
+  m_OnValuesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMaxValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMinValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_MinValue: 0
   m_MaxValue: 5
   m_Direction: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
   m_FillRect: {fileID: 1315532890}
   m_MaxHandleRect: {fileID: 1926469466}
   m_MinHandleRect: {fileID: 628597490}
@@ -2431,12 +2449,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 766071523}
+  m_OnValuesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMaxValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMinValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_MinValue: 66
   m_MaxValue: 86
   m_Direction: 2
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
   m_FillRect: {fileID: 766071522}
   m_MaxHandleRect: {fileID: 1261670905}
   m_MinHandleRect: {fileID: 756891666}
@@ -5345,12 +5369,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1147350252}
+  m_OnValuesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMaxValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMinValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_MinValue: 0
   m_MaxValue: 20
   m_Direction: 2
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
   m_FillRect: {fileID: 1147350251}
   m_MaxHandleRect: {fileID: 1702415466}
   m_MinHandleRect: {fileID: 1614939345}
@@ -5744,12 +5774,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 925610687}
+  m_OnValuesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMaxValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnMinValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
   m_MinValue: 32
   m_MaxValue: 52
   m_Direction: 2
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
   m_FillRect: {fileID: 925610686}
   m_MaxHandleRect: {fileID: 1799793793}
   m_MinHandleRect: {fileID: 1797426361}
