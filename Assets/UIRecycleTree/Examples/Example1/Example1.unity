@@ -647,7 +647,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2142754938}
   m_HandleRect: {fileID: 2142754937}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1061,264 +1061,58 @@ MonoBehaviour:
   onNodeDblClick:
     m_PersistentCalls:
       m_Calls: []
-  onExpandStateChanged:
+  onNodeExpandStateChanged:
     m_PersistentCalls:
       m_Calls: []
   onSelectionChanged:
     m_PersistentCalls:
       m_Calls: []
+  fullRowNodes: 0
+  highlightSubSelected: 0
+  childIndent: 55
+  leftPadding: 1
+  rightPadding: 1
+  contentSpacing: 1
+  toggleWidth: 40
+  toggleIconSize: {x: 30, y: 30}
+  imageEnabled: 1
+  imageWidth: 40
+  imageIconSize: {x: 35, y: 35}
+  checkboxEnabled: 0
+  recursiveChecked: 0
+  checkboxWidth: 40
+  checkboxIconSize: {x: 35, y: 35}
   root:
-    rid: 7739563855141666816
+    rid: 1382937738788470784
   pathSeparator: /
   expandedNodes: []
-  nodePrefs: {fileID: 11400000, guid: aefb4e2d6a5cfae4d8cc3edf696359cd, type: 2}
   nodeStylesArray:
   - {fileID: 11400000, guid: e524d7fd3e52fac45978806dc595bd2a, type: 2}
-  lastNodeId: 11
+  lastNodeId: 12
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 7739563855141666816
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
+    - rid: 1382937738788470784
+      type: {class: Node, ns: UIRecycleTreeNamespace, asm: Assembly-CSharp}
       data:
         nodeCollection:
-          rid: 7739563855141666817
+          rid: 1382937738788470785
         treeView: {fileID: 1820099767}
         parent:
           rid: -2
         _name: 
-        _id: 11
+        _id: 12
         _isExpanded: 1
         _isChecked: 0
         _styleIndex: 0
-    - rid: 7739563855141666817
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes:
-        - rid: 7739564079000846540
-        - rid: 7739564079000846564
-        - rid: 7739564079000846566
-        - rid: 7739564079000846568
-        - rid: 7739564079000846570
-        - rid: 7739564079000846574
-        - rid: 7739564079000846578
-        _owner:
-          rid: 7739563855141666816
-    - rid: 7739564079000846540
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846541
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 0
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846541
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
+    - rid: 1382937738788470785
+      type: {class: NodeCollection, ns: UIRecycleTreeNamespace, asm: Assembly-CSharp}
       data:
         _childNodes: []
         _owner:
-          rid: 7739564079000846540
-    - rid: 7739564079000846564
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846565
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 1
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846565
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes:
-        - rid: 7739564079000846576
-        _owner:
-          rid: 7739564079000846564
-    - rid: 7739564079000846566
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846567
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 2
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846567
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes: []
-        _owner:
-          rid: 7739564079000846566
-    - rid: 7739564079000846568
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846569
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 3
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846569
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes: []
-        _owner:
-          rid: 7739564079000846568
-    - rid: 7739564079000846570
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846571
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 4
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846571
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes:
-        - rid: 7739564079000846572
-        _owner:
-          rid: 7739564079000846570
-    - rid: 7739564079000846572
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846573
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739564079000846570
-        _name: node
-        _id: 5
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846573
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes:
-        - rid: 7739564079000846580
-        _owner:
-          rid: 7739564079000846572
-    - rid: 7739564079000846574
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846575
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 6
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846575
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes: []
-        _owner:
-          rid: 7739564079000846574
-    - rid: 7739564079000846576
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846577
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739564079000846564
-        _name: node
-        _id: 7
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846577
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes: []
-        _owner:
-          rid: 7739564079000846576
-    - rid: 7739564079000846578
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846579
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739563855141666816
-        _name: node
-        _id: 8
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846579
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes: []
-        _owner:
-          rid: 7739564079000846578
-    - rid: 7739564079000846580
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846581
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739564079000846572
-        _name: node
-        _id: 9
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846581
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes:
-        - rid: 7739564079000846582
-        _owner:
-          rid: 7739564079000846580
-    - rid: 7739564079000846582
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        nodeCollection:
-          rid: 7739564079000846583
-        treeView: {fileID: 1820099767}
-        parent:
-          rid: 7739564079000846580
-        _name: node
-        _id: 10
-        _isExpanded: 0
-        _isChecked: 0
-        _styleIndex: 0
-    - rid: 7739564079000846583
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
-      data:
-        _childNodes: []
-        _owner:
-          rid: 7739564079000846582
+          rid: 1382937738788470784
 --- !u!222 &1820099768
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1358,6 +1152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeView: {fileID: 1820099767}
   targetGameObject: {fileID: 4428639106631637088}
+  selectedMaterial: {fileID: 0}
+  regularMaterial: {fileID: 0}
 --- !u!4 &2042108848
 Transform:
   m_ObjectHideFlags: 0

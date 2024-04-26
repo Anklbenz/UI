@@ -638,7 +638,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  template: {fileID: 7025428388814273469, guid: 9ec03430e06dfd944b621ab3fc81496e, type: 3}
+  template: {fileID: 7025428388814273469, guid: 9ec03430e06dfd944b621ab3fc81496e,
+    type: 3}
   contentLayoutGroup: {fileID: 1124083859782971056}
   itemHeight: 70
   onNodeSelected:
@@ -647,52 +648,64 @@ MonoBehaviour:
   onNodeDeselected:
     m_PersistentCalls:
       m_Calls: []
-  onNodeChecked:
+  onNodeCheckedChanged:
     m_PersistentCalls:
       m_Calls: []
   onNodeDblClick:
     m_PersistentCalls:
       m_Calls: []
-  onExpandStateChanged:
+  onNodeExpandStateChanged:
     m_PersistentCalls:
       m_Calls: []
   onSelectionChanged:
     m_PersistentCalls:
       m_Calls: []
+  fullRowNodes: 0
+  highlightSubSelected: 0
+  childIndent: 55
+  leftPadding: 1
+  rightPadding: 1
+  contentSpacing: 1
+  toggleWidth: 60
+  toggleIconSize: {x: 40, y: 40}
+  imageEnabled: 1
+  imageWidth: 40
+  imageIconSize: {x: 35, y: 35}
+  checkboxEnabled: 0
+  recursiveChecked: 0
+  checkboxWidth: 40
+  checkboxIconSize: {x: 35, y: 35}
   root:
-    rid: 7739563855141666816
+    rid: 1382937713010803064
   pathSeparator: /
   expandedNodes: []
-  nodePrefs: {fileID: 11400000, guid: aefb4e2d6a5cfae4d8cc3edf696359cd, type: 2}
   nodeStylesArray:
   - {fileID: 11400000, guid: e524d7fd3e52fac45978806dc595bd2a, type: 2}
-  fullRectSelect: 1
-  checkboxesEnabled: 1
-  lastNodeId: 65
+  lastNodeId: 0
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 7739563855141666816
-      type: {class: Node, ns: UIRecycleTree, asm: Assembly-CSharp}
+    - rid: 1382937713010803064
+      type: {class: Node, ns: UIRecycleTreeNamespace, asm: Assembly-CSharp}
       data:
         nodeCollection:
-          rid: 7739563855141666817
+          rid: 1382937713010803065
         treeView: {fileID: 1124083860405979851}
         parent:
           rid: -2
         _name: 
-        _id: 65
+        _id: 0
         _isExpanded: 1
         _isChecked: 0
         _styleIndex: 0
-    - rid: 7739563855141666817
-      type: {class: NodeCollection, ns: UIRecycleTree, asm: Assembly-CSharp}
+    - rid: 1382937713010803065
+      type: {class: NodeCollection, ns: UIRecycleTreeNamespace, asm: Assembly-CSharp}
       data:
         _childNodes: []
         _owner:
-          rid: 7739563855141666816
+          rid: 1382937713010803064
 --- !u!114 &1124083860405979852
 MonoBehaviour:
   m_ObjectHideFlags: 0

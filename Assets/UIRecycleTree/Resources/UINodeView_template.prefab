@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7801083063853005482}
   - component: {fileID: 2247248671750221495}
   m_Layer: 0
-  m_Name: ExpandedToggleControl
+  m_Name: ToggleControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 594956594931355806}
   - component: {fileID: 2923859893899820199}
   m_Layer: 0
-  m_Name: CheckedControl
+  m_Name: CheckboxControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 610, y: 0}
-  m_SizeDelta: {x: -610, y: 20}
+  m_SizeDelta: {x: -610, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7025428388814273469
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indentBox: {fileID: 2193461167301540481}
   expandToggleControl: {fileID: 6062512719740587044}
-  iconControl: {fileID: 2084153647841775951}
+  imageControl: {fileID: 2084153647841775951}
   textControl: {fileID: 2116457172356689996}
   checkboxControl: {fileID: 2923859893899820199}
   content: {fileID: 7930461730547366512}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 6873682962363692091}
   - component: {fileID: 1098494695651640425}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 2402564180476244521}
   - component: {fileID: 5693303475026332564}
   m_Layer: 0
-  m_Name: IconControl
+  m_Name: ImageControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 694813331684531810}
   - component: {fileID: 5446166776753803135}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 7143587015313043116}
   - component: {fileID: 5118602342871331866}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

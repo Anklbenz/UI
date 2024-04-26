@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="93979a34-c573-458c-9408-063a77380667" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Switcher/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Examples/Scripts/LabeledSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Examples/Scripts/LabeledSlider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/ContextMenuUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/ContextMenuUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/CreateUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/CreateUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/UIRangeSliderEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/Editor/UIRangeSliderEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/UIRangeSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRangeSlider/Scripts/UIRangeSlider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIRecycleTree/Resources/UINodeView_template.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIRecycleTree/Resources/UINodeView_template.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +126,8 @@
       <workItem from="1711110059588" duration="3001000" />
       <workItem from="1711114921296" duration="2344000" />
       <workItem from="1712750453026" duration="1174000" />
+      <workItem from="1713172386408" duration="594000" />
+      <workItem from="1714117531003" duration="106000" />
     </task>
     <servers />
   </component>
